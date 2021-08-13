@@ -1,6 +1,5 @@
 ---
-bio: My research interests include distributed robotics, mobile computing and programmable 
-  matter.
+bio: My research interests include the applications of survival analysis in Medicine, sequential decision processes, dynamics of visualizations in R and Python.
 education:
   courses:
   - course: PhD in Statistics (Biostatistics)
@@ -26,7 +25,7 @@ role: PhD candidate (Statistics)
 social:
 - icon: envelope
   icon_pack: fas
-  link: /#contact
+  link: mailto:abubakarisumaila3@gmail.com
 - display:
     header: true
   icon: twitter
@@ -46,8 +45,8 @@ superuser: true
 title: Abubakari Sumaila Salpawuni
 ---
 
-Abubakari Sumaila Salpawuni is a Statistics PhD candidate at the Yildiz Technical University, Istanbul. Salpawuni's research interests include applications of survival analysis in Medicine, sequential decision processes, and the use of R and Python as programmable languages to data mining.  He is a member of the Bayesian statistical group that seeks to use concepts of Bayesian statistics to shape decision making. He is a proud supporter Liverpool FC and enjoys chatting novels on weekends.
+Abubakari Sumaila Salpawuni is a Statistics PhD candidate at the Yildiz Technical University, Istanbul. Salpawuni's research interests include applications of survival analysis in Medicine, sequential decision processes, and the use of `R` and `Python` as programmable languages to data mining.  He is a member of the Bayesian statistics group in the department of Statistics that seeks to use noble concepts of Bayesian statistics to shape decision making.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+Prior to enrolling for his doctoral studies, Salpawuni served as an assistant Biostatistics tutor at the School of Anesthesia, Komfo Anokye Teaching Hospital (KATH). He has also taught various courses in statistics, on private bases. Whiles still on his graduate studies, he is also a freelancer on [Fiverr](https://www.fiverr.com/ssalpawuni?up_rollout=true) where he primarily renders services in data analysis using `R` and `Python`. In his free time, Salpawuni enjoys watching football games (English Premiership), reading science fiction and watching movies.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
