@@ -3,7 +3,7 @@ bio: My research interests include the applications of survival analysis in Medi
 education:
   courses:
   - course: PhD in Statistics (Biostatistics)
-    institution: Yildiz Technical University, Istanbul
+    institution: Yildiz Technical University, Istanbul, Turkey
     year: 2019 -- date
   - course: M.Res in Statistics
     institution: Dokuz Eylül University, Izmir, Turkey
@@ -19,7 +19,7 @@ interests:
 - Data Mining with R
 - Machine Learning with Python
 organizations:
-- name: Yildiz Technical University, Istanbul, Turkey
+- name: Yildiz Technical University, Istanbul
   url: https://www.yildiz.edu.tr/
 role: PhD candidate (Statistics)
 social:
