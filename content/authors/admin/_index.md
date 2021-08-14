@@ -6,10 +6,10 @@ education:
     institution: Yildiz Technical University, Istanbul
     year: 2019 -- date
   - course: M.Res in Statistics
-    institution: Dokuz Eylül University, Turkey
+    institution: Dokuz Eylül University, Izmir, Turkey
     year: 2019
   - course: BSc in Statistics
-    institution: University of Cape Coast, Ghana
+    institution: University of Cape Coast, Cape Coast, Ghana
     year: 2013
 email: "abubakarisumaila3@gmail.com"
 highlight_name: false
@@ -19,7 +19,7 @@ interests:
 - Data Mining with R
 - Machine Learning with Python
 organizations:
-- name: Yildiz Technical University, Turkey
+- name: Yildiz Technical University, Istanbul, Turkey
   url: https://www.yildiz.edu.tr/
 role: PhD candidate (Statistics)
 social:
