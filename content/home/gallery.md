@@ -9,7 +9,7 @@ headless: true
 # Order that this section appears on the page.
 weight: 66
 
-title: Salpawuni's gallery
+title: Gallery
 subtitle:
 
 design:
