@@ -4,7 +4,7 @@
 widget: blank
 
 # Activate this widget? true/false
-active: false
+active: true
 
 # This file represents a page section.
 headless: true
@@ -27,7 +27,6 @@ design:
   spacing:
     padding: ["20px", "0", "20px", "0"]
 ---
-
 Welcome to the demo of the **academic resumé template** for  Wowchemy, the Website Builder for Hugo.
 
 [Explore similar templates](https://wowchemy.com/templates/)
@@ -40,4 +39,4 @@ Welcome to the demo of the **academic resumé template** for  Wowchemy, the Webs
 This homepage section is an example of adding [elements](https://wowchemy.com/docs/content/writing-markdown-latex/) to the [*Blank* widget](https://wowchemy.com/docs/getting-started/page-builder/).
 
 Backgrounds can be applied to any section. Here, the *background* option is set give an *image parallax* effect.
-{{% /callout %}}
+{{% /callout %}} 
