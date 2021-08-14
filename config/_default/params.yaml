@@ -40,7 +40,7 @@ appointment_url: 'https://calendly.com'
 contact_links:
   - icon: facebook
     icon_pack: fab
-    name: Chat on Facebook
+    name: Follow on Facebook
     link: 'https://www.facebook.com/sumailasalpawuni'
   - icon: twitter
     icon_pack: fab
