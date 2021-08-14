@@ -20,36 +20,36 @@ twitter: ''
 
 # Contact (edit or remove options as required)
 
-email: test@example.org
-phone: 888 888 88 88
+email: abubakarisumaila3@gmail.com
+phone: +90 541 726 35 38
 address:
-  street: 450 Serra Mall
-  city: Stanford
-  region: CA
-  postcode: '94305'
-  country: United States
-  country_code: US
+  street: Gökalp, 38. Sk. No:8, Zeytinburnu
+  city: Istanbul
+  region: IST
+  postcode: '34020'
+  country: Turkey
+  country_code: TUR
 coordinates:
-  latitude: '37.4275'
-  longitude: '-122.1697'
-directions: Enter Building 1 and take the stairs to Office 200 on Floor 2
+  latitude: '40.99363'
+  longitude: '28.90789'
+directions: From street 8, enter Building 1 and take the stairs to room 116 on Floor 2
 office_hours:
-  - 'Monday 10:00 to 13:00'
-  - 'Wednesday 09:00 to 10:00'
+  - 'Monday 08:30 to 18:30'
+  - 'Wednesday 09:00 to 16:30'
 appointment_url: 'https://calendly.com'
 contact_links:
+  - icon: facebook
+    icon_pack: fab
+    name: Chat on Facebook
+    link: 'https://www.facebook.com/sumailasalpawuni'
   - icon: twitter
     icon_pack: fab
     name: DM Me
-    link: 'https://twitter.com/Twitter'
+    link: 'https://twitter.com/SSalpawun'
   - icon: skype
     icon_pack: fab
     name: Skype Me
-    link: 'skype:echo123?call'
-  - icon: keybase
-    icon_pack: fab
-    name: Chat on Keybase
-    link: 'https://keybase.io/'
+    link: 'skype:abubakarisumaila3?call'
   - icon: comments
     icon_pack: fas
     name: Discuss on Forum
