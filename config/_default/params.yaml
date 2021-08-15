@@ -15,8 +15,8 @@ font_size: L
 site_type: Person
 local_business_type: ''
 org_name: ''
-description: ''
-twitter: ''
+description: 'Data scientist at YTU, Istanbul'
+twitter: 'SSalpawun'
 
 # Contact (edit or remove options as required)
 
@@ -123,7 +123,7 @@ breadcrumb:
   page_types:
     book: true
 comments:
-  provider: ''
+  provider: 'disqus'
   commentable:
     post: true
     book: true
@@ -131,7 +131,7 @@ comments:
     publication: true
     event: true
   disqus:
-    shortname: ''
+    shortname: 'https-s-salpawuni-netlify-app'
     show_count: true
   commento:
     url: ''
