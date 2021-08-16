@@ -6,7 +6,7 @@
 # Appearance
 
 theme: minimal
-day_night: true # To turn it on, switch to 'true'
+day_night: false # To turn it on, switch to 'true'
 font: ''
 font_size: L
 
@@ -147,9 +147,9 @@ map:
   api_key: ''
   zoom: 15
 marketing:
-  google_analytics: 'google9b0632ab0139f659'
+  google_analytics: ''
   google_tag_manager: ''
-  google_site_verification: 'google9b0632ab0139f659'
+  google_site_verification: ''
   baidu_site_verification: ''
   baidu_tongji: ''
 cms:
