@@ -4,7 +4,7 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 title: Sumaila Salpawuni # Website name
-baseurl: 'https://s-salpawuni.netlify.app/' #'https://example.com/' # Website URL
+baseurl: 'https://ssalpawuni.rbind.io/' #'https://example.com/' # Website URL
 copyright: '' # Footer text, e.g. '© {year} Me'
 
 ############################
