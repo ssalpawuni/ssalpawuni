@@ -6,7 +6,7 @@
 # Appearance
 
 theme: minimal
-day_night: false # To turn it on, switch to 'true'
+day_night: true # To turn it on, switch to 'true'
 font: ''
 font_size: L
 
