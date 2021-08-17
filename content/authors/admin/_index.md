@@ -4,7 +4,7 @@ education:
   courses:
   - course: PhD in Statistics (Biostatistics)
     institution: Yildiz Technical University, Istanbul, Turkey
-    year: 2019 -- date
+    year: ongoing
   - course: M.Res in Statistics
     institution: Dokuz Eylül University, Izmir, Turkey
     year: 2019
