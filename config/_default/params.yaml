@@ -131,7 +131,7 @@ comments:
     publication: true
     event: true
   disqus:
-    shortname: '@sumailasalpawuni' #'https-s-salpawuni-netlify-app'
+    shortname: 'https-s-salpawuni-netlify-app'
     show_count: true
   commento:
     url: ''
