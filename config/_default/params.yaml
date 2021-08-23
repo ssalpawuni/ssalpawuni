@@ -5,7 +5,7 @@
 
 # Appearance
 
-theme: minimal
+theme: minimal 
 day_night: true # To turn it on, switch to 'true'
 font: ''
 font_size: L
@@ -15,7 +15,7 @@ font_size: L
 site_type: Person
 local_business_type: ''
 org_name: ''
-description: 'Data scientist at YTU, Istanbul'
+description: 'I am a PhD candidate (Biostatistics) at YTU, Istanbul. Currently, my research interests spans applications of survival analysis in Medicine'
 twitter: 'SSalpawun'
 
 # Contact (edit or remove options as required)
