@@ -50,10 +50,10 @@ contact_links:
     icon_pack: fab
     name: Skype Me
     link: 'skype:abubakarisumaila3?call'
-  - icon: comments
-    icon_pack: fas
-    name: Discuss on Forum
-    link: 'https://discourse.gohugo.io'
+  #- icon: comments
+  #  icon_pack: fas
+  #  name: Discuss on Forum
+  #  link: 'https://discourse.gohugo.io'
 
 # Site header
 
@@ -148,7 +148,7 @@ map:
   zoom: 15
 marketing:
   google_analytics: ''
-  google_tag_manager: ''
+  google_tag_manager: 'GTM-WQ4RW8C'
   google_site_verification: ''
   baidu_site_verification: ''
   baidu_tongji: ''
