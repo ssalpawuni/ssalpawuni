@@ -34,7 +34,7 @@ social:
   link: https://twitter.com/SSalpawun
 - icon: graduation-cap
   icon_pack: fas
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ-45 # added -45
 - icon: github
   icon_pack: fab
   link: https://github.com/ssalpawuni/ssalpawuni
