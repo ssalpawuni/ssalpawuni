@@ -45,8 +45,8 @@ superuser: true
 title: Abubakari Sumaila Salpawuni
 ---
 
-Abubakari Sumaila Salpawuni is a Statistics PhD candidate at the Yildiz Technical University, Istanbul. Salpawuni's research interests include applications of survival analysis in Medicine, sequential decision processes, and the use of `R` and `Python` as programmable tools to data mining. Currently, he is working on his dissertation topic; "Applications of Survival Analysis in Medicine: Bayesian and Frequentist Approaches". He is a member of the Bayesian statistics group in the department of Statistics that seeks to use noble concepts of Bayesian statistics to shape decision making.
+Abubakari Sumaila Salpawuni is a Statistics PhD candidate at the Yildiz Technical University, Istanbul. Salpawuni's research interests include applications of survival analysis in Medicine, sequential decision processes, and the use of `R` and `Python` as programmable tools to data mining. Currently, he is working on his dissertation topic; "Applications of Survival Analysis in Medicine: Bayesian and Frequentist Approaches". He is a member of the Bayesian statistics group in the department of Statistics that seeks to use novel concepts of Bayesian statistics to shape decision making.
 
 Prior to enrolling for his doctoral studies, Salpawuni served as an assistant Biostatistics tutor at the School of Anesthesia, Komfo Anokye Teaching Hospital (KATH). He has also taught various courses in statistics, on private bases. Whiles still on his graduate studies, he is also a freelancer on [Fiverr](https://www.fiverr.com/ssalpawuni?up_rollout=true) where he primarily renders services in data analysis using `R` and `Python`. In his free time, Salpawuni enjoys watching football games (English Premiership), reading science fiction and watching movies.
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/my-resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
