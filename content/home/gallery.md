@@ -7,13 +7,13 @@ widget: blank
 headless: true
 
 # Order that this section appears on the page.
-weight: 66
+weight: 125 #66
 
-title: Gallery 
+title: Gallery
 subtitle:
 
 design:
-  columns: '2'
+  columns: '1'
 ---
 
 {{< gallery album="themes" >}}
