@@ -22,8 +22,9 @@ main:
   - name: Courses
     url: courses/
     weight: 60
-  - name: Contact
-    url: '#contact'
-    weight: 70
   - name: Gallery
     url: '#gallery'
+    weight: 70
+  - name: Contact
+    url: '#contact'
+    weight: 80
