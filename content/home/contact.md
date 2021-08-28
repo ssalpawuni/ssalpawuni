@@ -9,8 +9,8 @@ headless: true
 # Order that this section appears on the page.
 weight: 130
 
-title: Contact
-subtitle:
+title: Hi there! #Contact
+subtitle: Feel free to contact me for opportunities. We could work together.
 
 content:
   # Automatically link email and phone or display as text?

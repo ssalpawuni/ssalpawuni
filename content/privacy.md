@@ -10,4 +10,4 @@ share: false
 title: Privacy Policy
 ---
 
-...
+This is been worked on. Please check in later!
