@@ -23,3 +23,7 @@ menu_title = "#118AB2" #"#fff"
 background = "#fadadd"
 home_section_odd = "#fadadd"
 home_section_even = "#fadadd"
+
+[dark]
+  link = "#bbdefb"
+  link_hover = "#FCA311" #"#bbdefb"
