@@ -12,8 +12,9 @@ authors: []
 lastmod: '2021-08-31T20:36:33+03:00'
 featured: no
 image:
-  caption: 'Image credit: [**Michael Dziedzic**](https://unsplash.com/photos/nIIbUcQuzUM)'
+  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/nIIbUcQuzUM)'
   focal_point: ''
+  placement: 2
   preview_only: no
 projects: []
 highlight: true
@@ -270,4 +271,4 @@ behavior of the estimation for a prior, for instance, $\mbox{Beta}$(150, 5).
 Finally, this post did not touch on 'credible intervals', finding Bayesian point
 estimates, and many more. A comprehensive discussion of these is well beyond this post. 
 
-#### Did you find this page helpful? Consider sharing it 🙌
+#### Did you find this post helpful? Consider sharing it \U0001F44B
