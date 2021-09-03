@@ -1,5 +1,5 @@
 ---
-title: Hi Hugo
+title: A brief Demo of using R
 author: ''
 date: '2021-08-12'
 slug: hi-hugo

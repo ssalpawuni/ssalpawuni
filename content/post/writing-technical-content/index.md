@@ -6,7 +6,7 @@ image:
   caption: 'Image credit: [**John Moeses Bauan**](https://unsplash.com/photos/OGZtQF8iC0g)'
   placement: 3
 math: true
-title: Writing technical content in Academic
+title: A Template to be edited sooner than later.
 ---
 
 Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.
@@ -56,8 +56,8 @@ To render *inline* or *block* math, wrap your LaTeX math with `$...$` or `$$...$
 Example **math block**:
 
 ```latex
-$$\gamma_{n} = \frac{ 
-\left | \left (\mathbf x_{n} - \mathbf x_{n-1} \right )^T 
+$$\gamma_{n} = \frac{
+\left | \left (\mathbf x_{n} - \mathbf x_{n-1} \right )^T
 \left [\nabla F (\mathbf x_{n}) - \nabla F (\mathbf x_{n-1}) \right ] \right |}
 {\left \|\nabla F(\mathbf{x}_{n}) - \nabla F(\mathbf{x}_{n-1}) \right \|^2}$$
 ```
