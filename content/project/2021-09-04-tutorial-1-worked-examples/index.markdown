@@ -3,10 +3,10 @@ title: 'Tutorial 1: Worked Examples'
 author: Abubakari Sumaila Salpawuni
 date: '2021-09-04'
 slug: tutorial-1-worked-examples
-categories: []
+categories: [Question and Answers]
 tags: []
 subtitle: ''
-summary: 'Summary of my work...'
+summary: 'one-way ANOVA, joint distributions, expectation, variance'
 authors: []
 lastmod: '2021-09-04T16:33:31+03:00'
 featured: no
@@ -15,6 +15,15 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
+
+url_code: "uploads/pdfs/tutorial_1_salpawuni.tex"
+url_dataset: ""
+url_pdf: "uploads/codes/tutorial_1_salpawuni.pdf"
+url_poster: ""
+url_project: ""
+url_slides: ""
+url_source: ""
+url_video: ""
 ---
 
 
@@ -22,7 +31,7 @@ projects: []
 
 
 ## Introduction
-This is a tutorial of common problems in Statistics alongside their suggested solutions. No particular level is target. Thus, you may find any of the problems to be at any level (undergrad, masters or doctoral level). Questions may come from any topic in Statistics, rather than a chapter-by-chapter basis. In most cases, these questions are not designed by me. You may find some of the questions may be coming from my lectures notes, online portals where solutions to the problems are not given, well written Statistics books such as [Robert V. Hogg et al.](https://scholarworks.wmich.edu/books/119/), [Sheldon Ross](https://doi.org/10.2307/2344885), or questions whose original source are not clearly known (anonymous). In cases where I am certain of the original source of the question, I would do my best to cite the source of it. If you feel a problem is not properly cited, please draw my attention to it.
+This is a tutorial of common problems in Statistics alongside their suggested solutions. No particular level is the target. Thus, you may find any of the problems to be at any level (undergrad, master's, or doctoral level). Questions may come from any topic in Statistics, rather than on a chapter-by-chapter basis. In most cases, these questions are not designed by me. You may find some of the questions may be coming from my lectures notes, online portals where solutions to the problems are not given, well-written Statistics books such as [Robert V. Hogg et al.](https://scholarworks.wmich.edu/books/119/), [Sheldon Ross](https://doi.org/10.2307/2344885), or questions whose original source are not clearly known (anonymous). In cases where I am certain of the original source of the question, I would do my best to cite the source of it. If you feel a problem is not properly cited, please draw my attention to it.
 
 # Problem 1.
 
@@ -31,6 +40,7 @@ To study the effect of temperature on yield in a chemical process, five batches 
 i.) Construct an analysis of variance `ANOVA` table for this problem.
 
 ii.) Use a 0.05 level of significance to test whether the temperature level has an effect on the mean yield of the process.
+{{< spoiler text="Source" >}} multiple online sources {{< /spoiler >}}
 
 <table>
 <caption>Table 1: Temperature level versus batch</caption>
@@ -79,7 +89,7 @@ ii.) Use a 0.05 level of significance to test whether the temperature level has 
 
 # Suggested solution
 
-Clearly, this is a `one-way ANOVA` problem,  and can be solved in many ways. I think it's best, IMHO, to decompose the sum of squares into an array treatment **sum of squares** and residual sum of squares.
+Clearly, this is a `one-way ANOVA` problem,  and can be solved in many ways. I think it's best, IMHO, to decompose the sum of squares into an array comprising treatment **sum of squares** and residual sum of squares.
 
 $x_{lj}$ be an observation for the $l^{th}$ bath under treatment $j$. Thus, by decomposition:
 
@@ -169,11 +179,14 @@ F_{table} &= F_{[2, 12, \:1-\alpha = 0.95]} = 3.89
 \end{split}
 \end{equation*}
 
-Since $F_{cal} < F_{table}$, we fail to reject $H_0$ and conclude that there is exists `no sufficient evidence` to conclude that temperature level appears to have an effect on the mean yield of the process.
-[Insert Note here!]
+Since $F_{cal} < F_{table}$, we fail to reject $H_0$ and conclude that there is exists `no sufficient evidence` to conclude that temperature level appears to have an effect on the mean yield of the process. [Insert Note here!]
+
+{{% callout note %}}
+Rather than decomposing the data into an array format, you could also use formulae to obtain the sum of squares, and subsequently, an ANOVA table.
+{{% /callout %}}
 
 # Problem 2.
-Compute the correlation coefficient for each of the following probabilities densities:
+Compute the correlation coefficient for each of the following probability densities:
 
 i.)
 \begin{equation*}
@@ -195,7 +208,8 @@ f(x,y) =
 0 & \mbox{elsewhere}
 \end{cases}
 \end{equation*}
-[source:]
+
+{{< spoiler text="Source" >}} Hogan Craig et al. {{< /spoiler >}}
 
 # Suggested solution
 Mathematically, correlation coefficient, $\rho$, is defined as
@@ -342,7 +356,7 @@ Correlation coefficient:
 \end{split}
 \end{equation*}
 
-# Problem 3
+# Problem 3.
 A construction company wins two road rehabilitation projects, $RH1$ and $RH2$
 which are to be executed simultaneously. The marginal distribution of each of the projects is given below.
 
@@ -378,6 +392,7 @@ iii.) project RH1 takes longer time to complete than project RH2.
 
 iv.) Find the expected completion time for each project and interpret your
 results.
+{{< spoiler text="Source" >}} unknown {{< /spoiler >}}
 
 # Suggested solution
 The joint distribution table is shown below.
@@ -423,3 +438,5 @@ E(X) &= \sum xf(x)\\\\
 \end{equation*}
 
 When ever the company wins a rehabilitation project categorized as `RH1`, the expected time to *completion* of the project is about $28.8$  months. In the case of a project categorized as `RH2`, the time to completion is approximately $23.4$months.
+
+#### Did you find this post helpful? Consider sharing it😊😊😊
