@@ -1,0 +1,281 @@
+\documentclass[12pt,a4paper, fleq]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+\usepackage{relsize}
+\usepackage{float}
+\usepackage[sc]{mathpazo} 
+\usepackage{microtype}
+
+\newcommand{\taninv}{\tan^{-1}}
+\newcommand{\esp}{\mathbb{E}}
+\newcommand{\pro}{\mathbb{P}}
+
+
+% Setting margins of the document ==========================================================
+\usepackage{geometry} % Required for adjusting page dimensions and margins
+
+\geometry{
+	paper=a4paper, % Paper size
+	top=2.5cm, % Top margin
+	bottom=3cm, % Bottom margin
+	left=2.5cm, % Left margin
+	right=2.5cm, % Right margin
+	headheight=14pt, % Header height
+	footskip=1.5cm, % Space from the bottom margin to the baseline of the footer
+	headsep=1.2cm, % Space from the top margin to the baseline of the header
+}
+% PGF plots
+\usepackage{pgfplots, pgfplotstable}
+
+\begin{document}
+
+%====== creating the title of the document===============
+\title{\textcolor{blue}{Tutorial 1 (Abubakari Sumaila Salpawuni)}}\vskip -3mm
+
+\date{\textcolor{blue}{\today}}
+\maketitle
+%=========================================
+
+%++++++++++++++++
+% Problem 1
+%++++++++++++++++
+\subsection*{$Q_{1}$ -- solution}
+By decomposition:
+\[
+\begin{split}
+x_{lj} = &\bar{x} +\underbrace{\bar{x}_l - \bar{x}}_{treatment} +\underbrace{ x_{lj} - \bar{x}_l}_{residual};\: \mbox{where}\: \bar{x}_{..} = 30, \bar{x}_{1.} = 33,\bar{x}_{2.} = 29,\bar{x}_{3.} = 28\\[1mm]
+\begin{pmatrix}
+34&24&36&39&32\\
+30&31&34&23&27\\
+23&28&28&30&31\\
+\end{pmatrix}
+= 
+&\begin{pmatrix}
+30&30&30&30&30\\
+30&30&30&30&30\\
+30&30&30&30&30\\
+\end{pmatrix}
++\\[2mm]
+&\begin{pmatrix}
+3&3&3&3&3\\
+-1&-1&-1&-1&-1\\
+-2&-2&-2&-2&-2
+\end{pmatrix}
++
+\begin{pmatrix}
+1&-9&3&6&-1\\
+1&2&5&-6&-2\\
+-5&0&0&2&3
+\end{pmatrix}
+\end{split}
+\]
+The {\it sum of squares} (SS) from the above are:
+\[
+\begin{split}
+\mbox{SS}_{obs} &= \mbox{SS}_{mean} + \mbox{SS}_{treatment} + \mbox{SS}_{residual}\\
+ \mbox{SS}_{cor} &  = \mbox{SS}_{obs} -  \mbox{SS}_{mean}
+\end{split}
+\]
+\[
+\begin{split}
+\mbox{SS}_{obs} &= 34^2 + 24^2 + \ldots + 30^2 + 31^2 = 13806\\
+\mbox{SS}_{mean} &= 30^2 + 30^2 + \ldots + 30^2 = 13500\\
+\mbox{SS}_{cor} &= 13806 - 13500 = 306\\
+\mbox{SS}_{trt} &= 3^2 + 3^2 + \ldots + (-2)^2 + (-2)^2 = 70\\
+\mbox{SS}_{res} &= 1^2 + (-9)^2 + \ldots + 2^2 + 3^2 = 236
+\end{split}
+\]
+% anova table
+\begin{tabular}{lcccc}
+\toprule
+Source	&	DF	&	Sum of squares	&	 Mean sum of squares	&	 F-value \\
+\midrule
+Treatment 	&	2	&	70			&		35\\
+Error 		&	12	&	236			&		19.67			&	1.78*\\
+Total		&	14	&	306			&	\\
+\bottomrule
+\end{tabular}
+
+Hypothesis formulation:
+\[
+\begin{split}
+H_0 &: \mu_1 = \mu_2 = \mu_3\\
+H_1 &: \mu_1 \neq \mu_2 \neq \mu_3\\[5mm]
+F_{cal} &= 1.78\\
+F_{table} &= F_{[2, 12, \:1-\alpha = 0.95]} = 3.89
+\end{split}
+\]
+Since $F_{cal} < F_{table}$, we fail to reject $H_0$ and conclude that there is {\it no sufficient evidence} to conclude that temperature level appears to have an effect on the mean yield of the process.
+
+%++++++++++++++++
+% Problem 2
+%++++++++++++++++
+\subsection*{$Q_{2}$ -- solution}
+\[
+f(x,y) =
+\begin{cases}
+\frac13 (x+y) & 0 \le x \le 1; 0\le y \le 2\\
+0 & \mbox{elsewhere}
+\end{cases}
+\]
+\[
+\begin{split}
+f_X(x) & = \int_0^2 f(x,y)dy = \int_0^2 \frac13(x+y)dy\\ % Marginal for X
+& = \frac 13(xy + \frac{y^2}{2})\Big\rvert_0^2\\
+ & = \frac23(x+1)\\[5mm]
+E(X) &= \int_0^1 xf(x)dx = \int_0^1 x\cdot\frac 23(x+1)dx = \frac 59\\[2mm]
+E(X^2) & = \int_0^1 x^2f(x)dx = \int_0^1 x^2 \cdot \frac 23(x+1)dx = \frac{7}{18}\\[2mm]
+Var(X) & = E(X^2) - \left(E(X)\right)^2 = \frac{7}{18} - \left(\frac59\right)^2 = \frac{13}{162}\\[5mm]
+f_Y(y) & = \int_0^1 f(x,y)dx = \int_0^1 \frac13(x+y)dx\\ % marginal for Y
+& = \frac 13(\frac{x^2}{2}+ xy)\Big\rvert_0^1\\
+ & = \frac16(1 +2y)\\[5mm]
+E(Y) &= \int_0^1 yf(y)dy = \int_0^1 y\cdot\frac 16\left(\frac{x^2}{2}+ xy\right)\!dy = \frac{11}{9}\\[2mm]
+E(Y^2) & = \int_0^1 y^2f(y)dy = \int_0^1 y^2\cdot\frac 16\left(\frac{x^2}{2}+ xy\right)\!dy = \frac{16}{9}\\[2mm]
+Var(Y) & = E(Y^2) - \left(E(Y)\right)^2 = \frac{16}{9} - \left(\frac{11}{9}\right)^2 = \frac{23}{81}
+\end{split}
+\]
+\[
+\begin{split}
+E(XY) & = \int_0^1\int_0^2 xyf(x,y)dydx = \int_0^1\int_0^2  xy\cdot\frac13(x+y)dydx\\[2mm] % Find E(XY)
+&= \int_0^1\int_0^2\frac13(x^2y+xy^2)dydx = \int_0^1\frac13\left(\frac{x^2y^2}{2} + \frac{xy^3}{3}\right)\!\Bigg\rvert_0^2\!dx\\[2mm]
+& = \int_0^1 \frac13 (2x^2 + \frac{8x}{3})dx = \frac23\\[5mm]
+Cov(XY) & = E(XY) - E(X)E(Y)\\
+& = \frac23 - \frac59 \cdot \frac{11}{9} = -\frac{1}{81}\\[5mm]
+\therefore \rho_{X,Y}& = \frac{Cov(X,Y)}{\sigma_X\sigma_Y} = \frac{-1/81}{\sqrt{\frac{13}{162}\cdot \frac{23}{81}}} = \mathbf{-0.0818}
+\end{split}
+\]
+
+\[
+f(x,y) =
+\begin{cases}
+\frac{1}{22} (x+2y) & (1,1), (1, 3), (2, 1), (2, 3)\\
+\\
+0 & \mbox{elsewhere}
+\end{cases}
+\]
+Hence, the joint bivariate distribution is:\\
+\begin{table}[H]
+\centering
+\resizebox{0.30\textwidth}{!}{\begin{tabular}{c|c|c|}
+X/Y& 1 & 3\\
+\hline
+1 & $3/22$ & $7/22$\\
+\hline
+2 & $2/11$ & $4/11$\\
+\hline
+\end{tabular}}
+\end{table}
+The marginals are:
+\[
+\begin{split}
+f_X(x) & = \begin{cases}
+\frac{5}{11} & \mbox{if}\: = 1\\
+\frac{6}{11} & \mbox{if}\: x = 2\\
+0 & \mbox{elsewhere}
+\end{cases}\\
+f_Y(Y) & = \begin{cases}
+\frac{7}{22} & \mbox{if}\: y = 1\\
+\frac{15}{22} & \mbox{if}\: y = 3\\
+0 & \mbox{elsewhere}
+\end{cases}
+\end{split}
+\]
+\[
+\begin{split}
+E(X) & = \sum xf(x) = (1)\cdot\frac{5}{11} + (2)\cdot\frac{6}{11} = \frac{17}{11}\\[2mm]
+E(X^2) & = \sum x^2f(x) = (1^2)\cdot\frac{5}{11} + (2^2)\cdot\frac{6}{11} = \frac{29}{11}\\[2mm]
+Var(X) & = E(X^2) - \left(E(X)\right)^2 = \frac{29}{11} - \frac{289}{121} = \frac{30}{121}\\[5mm]
+\end{split}
+\]
+\[
+\begin{split}
+E(Y) & = \sum yf(y) = (1)\cdot\frac{7}{22} + (3)\cdot\frac{15}{22} = \frac{52}{22}\\[2mm]
+E(Y^2) & = \sum y^2f(y) = (1^2)\cdot\frac{5}{11} + (9^2)\cdot\frac{15}{22} = \frac{142}{22}\\[2mm]
+Var(Y) & = E(Y^2) - \left(E(Y)\right)^2 = \frac{142}{22} - \frac{676}{121} = \frac{105}{121}\\[5mm]
+E(X,Y) & = \sum_xyf(x,y)\\[2mm]
+&= (1)(1)\cdot\frac{3}{22} + (1)(3)\cdot\frac{7}{22} + (2)(1)\cdot\frac{2}{11} + (2)(3)\cdot\frac{4}{11} = \frac{40}{11}\\[2mm]
+Cov(X,Y) & = E(XY) - E(X)E(Y) = \frac{40}{11} - \frac{52}{22}\cdot \frac{17}{11} = -\frac{2}{121}\\[3mm]
+\therefore \rho_{X,Y}& = \frac{Cov(X,Y)}{\sigma_X\sigma_Y} = \frac{-2/121}{\sqrt{\frac{30}{121}\cdot \frac{105}{121}}} = \mathbf{-0.0356}
+\end{split}
+\]
+
+%++++++++++++++++
+% Problem 3
+%++++++++++++++++
+\subsection*{$Q_{3}$ -- solution}
+
+The joint distribution table is shown below:
+\begin{table}[H]
+\centering
+\resizebox{0.45\textwidth}{!}{\begin{tabular}{c|c|c|c|}
+RH1/RH2& 18 & 24 & 30\\
+\hline
+24 & 0.09 & 0.15 & 0.06\\
+\hline
+30 & 0.18 & 0.30 & 0.12\\
+\hline
+36 & 0.03 & 0.05 & 0.02\\
+\hline
+\end{tabular}}
+\end{table}
+The marginal distributions therefore are:
+\[
+f_{RH1}(t_1)=
+\begin{cases}
+0.30; &\mbox{if}\:\: t_1 = 24\\
+0.60; &\mbox{if}\:\: t_1 = 30\\
+0.10 ; &\mbox{if}\:\: t_1 = 36\\
+0; &\mbox{elsewhere}
+\end{cases}
+\]
+\[
+f_{RH2}(t_2)=
+\begin{cases}
+0.30; &\mbox{if}\:\: t_2 = 18\\
+0.50; &\mbox{if}\:\: t_2 = 24\\
+0.20 ; &\mbox{if}\:\: t_2 = 30\\
+0; &\mbox{elsewhere}
+\end{cases}
+\]
+
+\begin{enumerate}[i.]
+\item
+\[
+\begin{split}
+P(t_1 =t_2) &= P(t_1 = 30, t_2 =30) + P(t_1 = 24, t_2 = 24)\\
+&  = 0.15+0.12 = \mathbf{0.270}
+\end{split}
+\]
+\item
+\[
+\begin{split}
+P(t_1 < 30, t_2 <30) &= P(t_1 = 24, t_2 =18) + P(t_1 = 24, t_2 = 24)\\
+& = 0.09 + 0.15 = \mathbf{0.240}
+\end{split}
+\]
+\item
+\[
+\begin{split}
+P(t_1 > t_2) &= P(t_1 = 24, t_2 =18) + P(t_1 = 30, t_2 = 18) + P(t_1 =30, t_2 = 24)\\
+& + P(t_1 = 36, t_1 = 18) + P(t_1 = 36, t_2 =24) + P(t_1 =36, t_2 = 30)\\
+& =0.09+0.18+0.30+0.03+0.05+0.02= \mathbf{0.670}
+\end{split}
+\]
+\item
+\[
+\begin{split}
+E(X) &= \sum xf(x)\\
+\therefore E(RH1) &= \sum t_1f_{T_1}(t_1) = 24(0.30) + 30(0.60) + 36(0.10) = \mathbf{28.8}\\
+\therefore E(RH2) &= \sum t_2f_{T_1}(t_2) = 18(0.30) + 24(0.50) + 30(0.20) = \mathbf{23.40}\\
+\end{split}
+\]
+When ever the company wins a rehabilitation project categorized as {\bf RH1}, the expected time to {\em completion} of the project is about $28.8$  months. In the case of a project categorized as {\bf RH2}, the time to completion is approximately $23.4$months.
+\end{enumerate}
+\end{document}
