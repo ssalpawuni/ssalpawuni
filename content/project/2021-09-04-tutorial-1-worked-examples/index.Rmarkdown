@@ -1,0 +1,433 @@
+---
+title: 'Tutorial 1: Worked Examples'
+author: Abubakari Sumaila Salpawuni
+date: '2021-09-04'
+slug: tutorial-1-worked-examples
+categories: [Question and Answers]
+tags: []
+subtitle: ''
+summary: 'one-way ANOVA, joint distributions, expectation, variance'
+authors: []
+lastmod: '2021-09-04T16:33:31+03:00'
+featured: no
+image:
+  caption: 'Image credit: [**Sigmund**](https://unsplash.com/photos/mmPK8J0XpAM)'
+  focal_point: ''
+  preview_only: no
+projects: []
+
+url_code: "uploads/pdfs/tutorial_1_salpawuni.tex"
+url_dataset: ""
+url_pdf: "uploads/codes/tutorial_1_salpawuni.pdf"
+url_poster: ""
+url_project: ""
+url_slides: ""
+url_source: ""
+url_video: ""
+---
+
+```{r include = FALSE}
+options(blogdown.protect.math = FALSE)
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE,
+  fig.retina = 0.8,
+  dpi = 300,
+  out.width = "90%",
+  fig.align = 'center',
+  fig.show = "hold"
+)
+```
+
+```{r packages, echo=FALSE, message=FALSE}
+xfun::pkg_attach(c("tidyverse", "knitr", "tinytex"))
+```
+
+## Introduction
+This is a tutorial of common problems in Statistics alongside their suggested solutions. No particular level is the target. Thus, you may find any of the problems to be at any level (undergrad, master's, or doctoral level). Questions may come from any topic in Statistics, rather than on a chapter-by-chapter basis. In most cases, these questions are not designed by me. You may find some of the questions may be coming from my lectures notes, online portals where solutions to the problems are not given, well-written Statistics books such as [Robert V. Hogg et al.](https://scholarworks.wmich.edu/books/119/), [Sheldon Ross](https://doi.org/10.2307/2344885), or questions whose original source are not clearly known (anonymous). In cases where I am certain of the original source of the question, I would do my best to cite the source of it. If you feel a problem is not properly cited, please draw my attention to it.
+
+# Problem 1.
+
+To study the effect of temperature on yield in a chemical process, five batches were produced at each of three temperature levels. The results results are given below.
+
+i.) Construct an analysis of variance `ANOVA` table for this problem.
+
+ii.) Use a 0.05 level of significance to test whether the temperature level has an effect on the mean yield of the process.
+{{< spoiler text="Source" >}} multiple online sources {{< /spoiler >}}
+
+```{r tab, echo=FALSE}
+dat <-
+  tribble(
+    ~ Batch, ~ `50°C`, ~ `60°C`, ~ `70°C`,
+    1,           34,       30,       23,
+    2,           24,       31,       28,
+    3,           36,       34,       28,
+    4,           39,       23,       30,
+    5,           32,       27,       31
+  )
+kable(dat, format = "html",
+      caption = "Temperature level versus batch")
+```
+
+
+# Suggested solution
+
+Clearly, this is a `one-way ANOVA` problem,  and can be solved in many ways. I think it's best, IMHO, to decompose the sum of squares into an array comprising treatment **sum of squares** and residual sum of squares.
+
+$x_{lj}$ be an observation for the $l^{th}$ bath under treatment $j$. Thus, by decomposition:
+
+$$x_{lj} = \bar{x} +\underbrace{\bar{x}_l - \bar{x}}_{treatment} +\underbrace{ x_{lj} - \bar{x}_l}_{residual};\\: \mbox{where}$$
+
+\begin{equation*}
+\begin{split}
+\bar{x}_{..} &= 34 + \ldots + 32 + 30 + \ldots + 27 + 23 + \ldots +31 = 30\\\\
+\bar{x}_{1.} &= 34 + \ldots + 32 = 33\\\\
+\bar{x}_{2.} &= 30 + \ldots + 27 = 29\\\\
+\bar{x}_{3.} &= 23 + \ldots +31 = 28
+\end{split}
+\end{equation*}
+
+Decomposing sum of squares is, thus;
+
+\begin{equation}
+\begin{pmatrix}
+34&24&36&39&32\\\\
+30&31&34&23&27\\\\
+23&28&28&30&31
+\end{pmatrix}=
+\begin{pmatrix}
+30&30&30&30&30\\\\
+30&30&30&30&30\\\\
+30&30&30&30&30
+\end{pmatrix}
+\end{equation}
+\begin{equation}
++
+\begin{pmatrix}
+3&3&3&3&3\\\\
+-1&-1&-1&-1&-1\\\\
+-2&-2&-2&-2&-2
+\end{pmatrix}
++
+\begin{pmatrix}
+1&-9&3&6&-1\\\\
+1&2&5&-6&-2\\\\
+-5&0&0&2&3
+\end{pmatrix}
+\end{equation}
+
+The *sum of squares (SS)* from the above are:
+
+\begin{equation*}
+\begin{split}
+\mbox{SS}_{obs} &= \mbox{SS}_{mean} + \mbox{SS}_{treatment} + \mbox{SS}_{residual}\\\\
+ \mbox{SS}_{cor} &  = \mbox{SS}_{obs} -  \mbox{SS}_{mean}
+\end{split}
+\end{equation*}
+
+\begin{equation*}
+\begin{split}
+\mbox{SS}_{obs} &= 34^2 + 24^2 + \ldots + 30^2 + 31^2 = 13806\\\\
+\mbox{SS}_{mean} &= 30^2 + 30^2 + \ldots + 30^2 = 13500\\\\
+\mbox{SS}_{cor} &= 13806 - 13500 = 306\\\\
+\mbox{SS}_{trt} &= 3^2 + 3^2 + \ldots + (-2)^2 + (-2)^2 = 70\\\\
+\mbox{SS}_{res} &= 1^2 + (-9)^2 + \ldots + 2^2 + 3^2 = 236
+\end{split}
+\end{equation*}
+
+```{r anova, echo = FALSE, eval=FALSE}
+dat2 <- dat %>%
+  reshape2::melt(id.vars = "Batch") %>%
+  select(variable, value) %>%
+  rename(Treatment = variable)
+
+aov(value ~ Treatment, data = dat2) %>%
+  anova() %>% kable(digits = 3, format = "html")
+```
+
+i.
+### ANOVA table
+
+|Source         | DF  | Sum of squares | Mean sum of squares | F-value |
+|---------------|-----|----------------|---------------------|---------|
+|Treatment      | 2   | 70             | 35                  |         |
+|Error          | 12  | 236            | 19.667              | 1.78*   |
+|Total          | 14  | 306            |                     |         |
+
+ii.
+### Hypothesis formulation
+
+\begin{equation*}
+\begin{split}
+&H_0 : \mu_1 = \mu_2 = \mu_3 \quad \mbox{(mean yield across temperature level)}\\\\
+&H_1 : \mu_i \neq \mu_j \quad \mbox{for all}\quad i \neq j
+\end{split}
+\end{equation*}
+\begin{equation*}
+\begin{split}
+F_{cal} &= 1.78\\\\
+F_{table} &= F_{[2, 12, \:1-\alpha = 0.95]} = 3.89
+\end{split}
+\end{equation*}
+
+Since $F_{cal} < F_{table}$, we fail to reject $H_0$ and conclude that there is exists `no sufficient evidence` to conclude that temperature level appears to have an effect on the mean yield of the process. [Insert Note here!]
+
+{{% callout note %}}
+Rather than decomposing the data into an array format, you could also use formulae to obtain the sum of squares, and subsequently, an ANOVA table.
+{{% /callout %}}
+
+# Problem 2.
+Compute the correlation coefficient for each of the following probabilities densities:
+
+i.)
+\begin{equation*}
+f(x,y) =
+\begin{cases}
+\frac13 (x+y) & 0 \le x \le 1; 0\le y \le 2\\\\
+\\\\
+0 & \mbox{elsewhere}
+\end{cases}
+\end{equation*}
+
+
+ii.)
+\begin{equation*}
+f(x,y) =
+\begin{cases}
+\frac{1}{22} (x+2y) & (1,1), (1, 3), (2, 1), (2, 3)\\\\
+\\\\
+0 & \mbox{elsewhere}
+\end{cases}
+\end{equation*}
+
+{{< spoiler text="Source" >}} Hogan Craig et al. {{< /spoiler >}}
+
+# Suggested solution
+Mathematically, correlation coefficient, $\rho$, is defined as
+$\rho_{X,Y} = \frac{Cov(X,Y)}{\sigma_X\sigma_Y}$.
+This implies that, to find it, we need to find the marginal densities, $f_X(x),\\: f_Y(y)$, as well as $E(X),\\: E(Y),\\: E(XY),\\: \mbox{var}(X),\\: \mbox{var}(Y)$.
+
+i.)
+
+\begin{equation*}
+f(x,y) =
+\begin{cases}
+\frac13 (x+y) & 0 \le x \le 1; 0\le y \le 2\\\\
+\\\\
+0 & \mbox{elsewhere}
+\end{cases}
+\end{equation*}
+
+The marginals are;
+\begin{equation*}
+\begin{split}
+f_X(x) & = \int_0^2 f(x,y)dy = \int_0^2 \frac13(x+y)dy\\\\
+& = \frac 13(xy + \frac{y^2}{2})\Big\rvert_0^2\\\\
+& = \frac23(x+1)
+\end{split}
+\end{equation*}
+
+\begin{equation*}
+\begin{split}
+f_Y(y) & = \int_0^1 f(x,y)dx = \int_0^1 \frac13(x+y)dx\\\\
+& = \frac 13(\frac{x^2}{2}+ xy)\Big\rvert_0^1\\\\
+& = \frac16(1 +2y)
+\end{split}
+\end{equation*}
+
+The expectation and variance of $X$:
+\begin{equation*}
+\begin{split}
+E(X) &= \int_0^1 xf(x)dx = \int_0^1 x\cdot\frac 23(x+1)dx = \frac 59\\\\
+E(X^2) & = \int_0^1 x^2f(x)dx = \int_0^1 x^2 \cdot \frac 23(x+1)dx = \frac{7}{18}\\\\
+Var(X) & = E(X^2) - \left(E(X)\right)^2 = \frac{7}{18} - \left(\frac59\right)^2 = \frac{13}{162}
+\end{split}
+\end{equation*}
+
+The expectation and variance of $Y$:
+\begin{equation*}
+\begin{split}
+E(Y) &= \int_0^1 yf(y)dy = \int_0^1 y\cdot\frac 16\left(\frac{x^2}{2}+ xy\right)dy = \frac{11}{9}\\\\
+E(Y^2) & = \int_0^1 y^2f(y)dy = \int_0^1 y^2\cdot\frac 16\left(\frac{x^2}{2}+ xy\right)dy = \frac{16}{9}\\\\
+Var(Y) & = E(Y^2) - \left(E(Y)\right)^2 = \frac{16}{9} - \left(\frac{11}{9}\right)^2 = \frac{23}{81}
+\end{split}
+\end{equation*}
+
+The covariance of $X$ and $Y$:
+\begin{equation*}
+\begin{split}
+E(XY) & = \int_0^1\int_0^2 xyf(x,y)dydx = \int_0^1\int_0^2  xy\cdot\frac13(x+y)dydx\\\\
+&= \int_0^1\int_0^2\frac13(x^2y+xy^2)dydx = \int_0^1\frac13\left(\frac{x^2y^2}{2} + \frac{xy^3}{3}\right)\!\Bigg\rvert_0^2dx\\\\
+& = \int_0^1 \frac13 (2x^2 + \frac{8x}{3})dx = \frac23\\\\
+Cov(XY) & = E(XY) - E(X)E(Y)\\\\
+& = \frac23 - \frac59 \cdot \frac{11}{9} = -\frac{1}{81}
+\end{split}
+\end{equation*}
+
+Correlation coefficient:
+\begin{equation*}
+\begin{split}
+\therefore \rho_{X,Y}& = \frac{Cov(X,Y)}{\sigma_X\sigma_Y}\\\\
+&= \frac{-1/81}{\sqrt{\frac{13}{162}\cdot \frac{23}{81}}} = \mathbf{-0.0818}
+\end{split}
+\end{equation*}
+
+
+ii.)
+\begin{equation*}
+f(x,y) =
+\begin{cases}
+\frac{1}{22} (x+2y) & (1,1), (1, 3), (2, 1), (2, 3)\\\\
+\\\\
+0 & \mbox{elsewhere}
+\end{cases}
+\end{equation*}
+
+The bivariate joint distribution is:
+|X/Y      |1        |3      |
+|---------|---------|-------|
+|1        |3/22     |7/22   |
+|2        | 2/11    |4/11   |
+
+
+The marginals are;
+\begin{equation*}
+\begin{split}
+f_X(x) & = \begin{cases}
+\frac{5}{11} & \mbox{if}\\: = 1\\\\
+\frac{6}{11} & \mbox{if}\\: x = 2\\\\
+0 & \mbox{elsewhere}
+\end{cases}
+\end{split}
+\end{equation*}
+
+\begin{equation*}
+\begin{split}
+f_Y(y) & = \begin{cases}
+\frac{7}{22} & \mbox{if}\\: y = 1\\\\
+\frac{15}{22} & \mbox{if}\\: y = 3\\\\
+0 & \mbox{elsewhere}
+\end{cases}
+\end{split}
+\end{equation*}
+
+The expectation and variance of $X$:
+\begin{equation*}
+\begin{split}
+E(X) & = \sum xf(x) = (1)\cdot\frac{5}{11} + (2)\cdot\frac{6}{11} = \frac{17}{11}\\\\
+E(X^2) & = \sum x^2f(x) = (1^2)\cdot\frac{5}{11} + (2^2)\cdot\frac{6}{11} = \frac{29}{11}\\\\
+Var(X) & = E(X^2) - \left(E(X)\right)^2 = \frac{29}{11} - \frac{289}{121} = \frac{30}{121}
+\end{split}
+\end{equation*}
+
+The expectation and variance of $Y$:
+\begin{equation*}
+\begin{split}
+E(Y) & = \sum yf(y) = (1)\cdot\frac{7}{22} + (3)\cdot\frac{15}{22} = \frac{52}{22}\\\\
+E(Y^2) & = \sum y^2f(y) = (1^2)\cdot\frac{5}{11} + (9^2)\cdot\frac{15}{22} = \frac{142}{22}\\\\
+Var(Y) & = E(Y^2) - \left(E(Y)\right)^2 = \frac{142}{22} - \frac{676}{121} = \frac{105}{121}\\\\
+\end{split}
+\end{equation*}
+
+The covariance of $X$ and $Y$:
+\begin{equation*}
+\begin{split}
+E(X,Y) & = \sum_xyf(x,y)\\\\
+&= (1)(1)\cdot\frac{3}{22} + (1)(3)\cdot\frac{7}{22} + (2)(1)\cdot\frac{2}{11} + (2)(3)\cdot\frac{4}{11} = \frac{40}{11}\\\\
+Cov(X,Y) & = E(XY) - E(X)E(Y) = \frac{40}{11} - \frac{52}{22}\cdot \frac{17}{11} = -\frac{2}{121}
+\end{split}
+\end{equation*}
+
+Correlation coefficient:
+\begin{equation*}
+\begin{split}
+\therefore \rho_{X,Y}& = \frac{Cov(X,Y)}{\sigma_X\sigma_Y}\\\\
+& = \frac{-2/121}{\sqrt{\frac{30}{121}\cdot \frac{105}{121}}}\\\\
+& = \mathbf{-0.0356}
+\end{split}
+\end{equation*}
+
+# Problem 3.
+A construction company wins two road rehabilitation projects, $RH1$ and $RH2$
+which are to be executed simultaneously. The marginal distribution of each of the projects is given below.
+
+The marginal distributions therefore are:
+\begin{equation*}
+f_{RH1}(t_1)=
+\begin{cases}
+0.30; &\mbox{if}\quad t_1 = 24\\\\
+0.60; &\mbox{if}\quad t_1 = 30\\\\
+0.10 ; &\mbox{if}\quad t_1 = 36\\\\
+0; &\mbox{elsewhere}
+\end{cases}
+\end{equation*}
+
+\begin{equation*}
+f_{RH2}(t_2)=
+\begin{cases}
+0.30; &\mbox{if}\quad t_2 = 18\\\\
+0.50; &\mbox{if}\quad t_2 = 24\\\\
+0.20 ; &\mbox{if}\quad t_2 = 30\\\\
+0; &\mbox{elsewhere}
+\end{cases}
+\end{equation*}
+
+Assuming that the completion times of the projects are independent, find the
+probability that:
+
+i,) the two projects will be completed at the same time,
+
+ii.) both projects will be completed in less than 30 months, and
+
+iii.) project RH1 takes longer time to complete than project RH2.
+
+iv.) Find the expected completion time for each project and interpret your
+results.
+{{< spoiler text="Source" >}} unknown {{< /spoiler >}}
+
+# Suggested solution
+The joint distribution table is shown below.
+|RH1/RH2|18|24|30
+|-------------|-------------|-----------|---------|
+|24           |0.09         |0.15       |0.06     |
+|30           |0.18         |0.30       |0.12     |
+|36           |0.03         |0.05       |0.02     |
+
+i.)
+\begin{equation*}
+\begin{split}
+P(t_1 =t_2) &= P(t_1 = 30, t_2 =30) + P(t_1 = 24, t_2 = 24)\\\\
+&  = 0.15+0.12 = \mathbf{0.270}
+\end{split}
+\end{equation*}
+
+ii.)
+\begin{equation*}
+\begin{split}
+P(t_1 < 30, t_2 <30) &= P(t_1 = 24, t_2 =18) + P(t_1 = 24, t_2 = 24)\\\\
+& = 0.09 + 0.15 = \mathbf{0.240}
+\end{split}
+\end{equation*}
+
+iii.)
+\begin{equation*}
+\begin{split}
+P(t_1 > t_2) &= P(t_1 = 24, t_2 =18) + P(t_1 = 30, t_2 = 18) + P(t_1 =30, t_2 = 24)\\\\
+& + P(t_1 = 36, t_1 = 18) + P(t_1 = 36, t_2 =24) + P(t_1 =36, t_2 = 30)\\\\
+& =0.09+0.18+0.30+0.03+0.05+0.02\\\\
+&= \mathbf{0.670}
+\end{split}
+\end{equation*}
+
+iv.)
+\begin{equation*}
+\begin{split}
+E(X) &= \sum xf(x)\\\\
+\therefore E(RH1) &= \sum t_1f_{T_1}(t_1) = 24(0.30) + 30(0.60) + 36(0.10) = \mathbf{28.8}\\\\
+\therefore E(RH2) &= \sum t_2f_{T_1}(t_2) = 18(0.30) + 24(0.50) + 30(0.20) = \mathbf{23.40}
+\end{split}
+\end{equation*}
+
+When ever the company wins a rehabilitation project categorized as `RH1`, the expected time to *completion* of the project is about $28.8$  months. In the case of a project categorized as `RH2`, the time to completion is approximately $23.4$months.
+
+### Did you find this post helpful? Consider sharing it😊😊😊
