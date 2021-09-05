@@ -256,7 +256,7 @@ the {{<hl>}} global uncertainty {{</hl>}} that the probability of receiving an e
 the times $10.00$am and $12.00$pm could be any value in the interval. What about $\mbox{Beta}$(0.5, 0.5)?
 Well, it represents a belief that an email(s) is(are) received or not received between the given interval.
 
-# Concluding
+# Concluding remarks
 In this post, I have briefly touched on Bayesian Statistics -- where we start
 the estimation process with an initial 'belief', and as the modeling processes
 continue, we get to update the so-called belief. Thus, before we look at the
