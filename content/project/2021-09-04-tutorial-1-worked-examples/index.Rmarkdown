@@ -16,9 +16,9 @@ image:
   preview_only: no
 projects: []
 
-url_code: "uploads/pdfs/tutorial_1_salpawuni.tex"
+url_code: "uploads/tutorial_1_salpawuni.tex"
 url_dataset: ""
-url_pdf: "uploads/codes/tutorial_1_salpawuni.pdf"
+url_pdf: "uploads/tutorial_1_salpawuni.pdf"
 url_poster: ""
 url_project: ""
 url_slides: ""
