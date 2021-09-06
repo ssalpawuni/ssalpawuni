@@ -80,7 +80,7 @@ to the unknown parameters.
 - $p(y)$ is the `normalizer`. A constant that is of less importance to the modeling process
 
 ### Example
-In a certain population, it is believed that $1.5\\%$ of the population has
+In a certain population, it is believed that $1.5\\%$ of the population have
 disease X. Assuming health providers in that community decide to embark on a
 free screening exercise for the said disease. And it is known that, for a person who
 has the disease, the test has an accuracy of $97\\%$ for a positive test result. Also, for
