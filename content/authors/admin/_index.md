@@ -37,7 +37,7 @@ social:
   link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ-45 # added -45
 - icon: github
   icon_pack: fab
-  link: https://github.com/ssalpawuni/ssalpawuni
+  link: https://github.com/ssalpawuni/
 - icon: instagram
   icon_pack: fab
   link: https://instagram.com/ssalpawuni
