@@ -9,7 +9,7 @@ tags: ["R", "likelihood", "prior", "posterior", "Bayesian Statistics", "conjugat
 subtitle: ''
 summary: ''
 authors: []
-lastmod: '' #'2021-08-31T20:36:33+03:00'
+lastmod: '' ##'2021-08-31T20:36:33+03:00'
 featured: no
 image:
   caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/nIIbUcQuzUM)'
