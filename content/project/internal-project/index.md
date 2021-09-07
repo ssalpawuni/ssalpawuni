@@ -9,7 +9,7 @@ links:
   icon_pack: fab
   name: Follow
   url: https://twitter.com/SSalpawun
-slides: example
+slides: salpawuni
 summary: An example of using the in-built project page.
 tags:
 - Data mining
@@ -22,5 +22,5 @@ url_video: ""
 ---
 # To be updated soon ...
 
-- Soon, this section will be edited in relation to project works am currently engaged in ...
+- Very soon, this section will be edited in relation to project works am currently engaged in ...
 - the principal focus on survival analysis, data mining etc.
