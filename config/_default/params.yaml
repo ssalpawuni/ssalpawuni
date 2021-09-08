@@ -151,6 +151,7 @@ marketing:
   google_tag_manager: 'GTM-WQ4RW8C'
   google_site_verification: ''
   baidu_site_verification: ''
+  yandex-verification: '2b3031a2bcbbe9d5'
   baidu_tongji: ''
 cms:
   branch: master
