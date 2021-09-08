@@ -11,7 +11,7 @@ headless: true
 weight: 65
 
 title: Tutorials
-subtitle: 'Questions and suggested solutions, personal projects ...'
+subtitle: 'Questions' #, solutions, projects ...'
 
 content:
   # Page type to display. E.g. project.
