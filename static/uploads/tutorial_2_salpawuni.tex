@@ -1,0 +1,190 @@
+\documentclass[12pt,a4paper, fleq]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+\usepackage{relsize}
+\usepackage{float}
+\usepackage[sc]{mathpazo} 
+\usepackage{microtype}
+
+\newcommand{\taninv}{\tan^{-1}}
+\newcommand{\esp}{\mathbb{E}}
+\newcommand{\pro}{\mathbb{P}}
+
+
+% Setting margins of the document ==========================================================
+\usepackage{geometry} % Required for adjusting page dimensions and margins
+
+\geometry{
+	paper=a4paper, % Paper size
+	top=2.5cm, % Top margin
+	bottom=3cm, % Bottom margin
+	left=2.5cm, % Left margin
+	right=2.5cm, % Right margin
+	headheight=14pt, % Header height
+	footskip=1.5cm, % Space from the bottom margin to the baseline of the footer
+	headsep=1.2cm, % Space from the top margin to the baseline of the header
+}
+% PGF plots
+\usepackage{pgfplots, pgfplotstable}
+
+\begin{document}
+
+%====== creating the title of the document===============
+\title{\textcolor{blue}{Tutorial 2 (Abubakari Sumaila Salpawuni)}}\vskip -3mm
+
+\date{\textcolor{blue}{\today}}
+\maketitle
+%=========================================
+
+%++++++++++++++++
+% Problem 1
+%++++++++++++++++
+\subsection*{$Q_{1}$ -- solution}
+Given that $X_i \overset{iid}{\sim} Unif(\theta, \theta + \vert \theta \vert), \quad \theta \neq 0$
+
+For moments, generally, $M_k^* = \frac1n \sum_{i=1}^n X_i^k$  is the $k^{th}$ sample moment, for $k= 1, 2, \ldots$. This implies $M_1^* = \frac1n\sum_{i=1}^n X_i = \bar{X}$
+
+\begin{equation*}
+\begin{split}
+E(X) &= M_1^*\\
+&= \frac{\theta + \theta + \vert \theta \vert}{2} = M_1^*\\
+&= \theta + \frac{\vert \theta \vert}{2} = M_1^*\\
+&= \frac32\theta I_{(\theta > 0)} + \frac\theta2 I_{(\theta < 0)}
+\end{split}
+\end{equation*}
+Note that $M_1^* = \bar{X},\quad \mbox{and}\quad  P(\bar{X} >0 \vert \theta > 0) =P(\bar{X} < 0 \vert \theta < 0) = 1$. Solving for each condition (on $\theta \neq 0$), we have;
+\begin{equation*}
+\therefore \hat{\theta} = \frac23\bar{X} I_{(\bar{X}>0)} + 2\bar{X} I_{(\bar{X} < 0)}
+\end{equation*} 
+
+b)
+The distribution of $X_i$ can be considered for both sides (i.e, $\theta >0$ and $\theta <0$ such that;
+\begin{equation*}
+X_i \sim 
+\begin{cases}
+Uniform(\theta, 2\theta) & \mbox{if}\quad \theta > 0\\
+\\
+Uniform(\theta, 0) & \mbox{if}\quad \theta  < 0\\
+\end{cases}
+\end{equation*}
+Their likelihood functions are thus,
+\begin{equation*}
+f_X(x;\theta) = 
+\begin{cases}
+\frac{1}{\theta^n} I\left(\frac{X_{(n)}}{2} \le \theta \le X_{(1)}\right) & \mbox{if}\quad \theta  > 0\\
+\\
+\frac{1}{\vert\theta^n\vert} I\left(\theta \le X_{(1)}\right) & \mbox{if}\quad \theta  < 0\\
+\end{cases}
+\end{equation*}
+The maximum likelihood estimator, $\theta$,  is therefore the *order statistic*;
+\begin{equation*}
+\begin{cases}
+\underset{\theta > 0}{argmax} \quad f_X(x;\theta) = \frac{X_{(n)}}{2}\\
+\\
+\underset{\theta > 0}{argmax} \quad f_X(x;\theta) = X_{(1)}\\
+\end{cases}
+\end{equation*}
+
+\begin{equation*}
+\therefore \hat{\theta}_{\mbox{MLE}} = \frac{X_{(n)}}{2} I_{(X_1 > 0)} + X_{(n)} I_{(X_1 < 0)}  
+\end{equation*}
+
+%++++++++++++++++
+% Problem 2
+%++++++++++++++++
+\subsection*{$Q_{2}$ -- solution}
+Check to see if there exists a mode, equate $f^\prime(x)$ to zero (maximum value), checking that $f^{\prime\prime}(x) < 0$
+\begin{equation*}
+\begin{split}
+f(x) = \frac{4}{81}x(9-x^2) & \implies f^\prime(x) =  \frac{\partial f(x)}{\partial x} = \frac{1}{81}(36 - 12x^2)\\
+&\implies  f^{\prime\prime}(x) = -\frac{ 24x}{81} < 0\quad \mbox{(mode extists)}\\
+\end{split}
+\end{equation*}
+
+a)  at the mode; %% mode
+\begin{equation*}
+\begin{split}
+&f(x) = 0\\
+&\frac{4}{81}(9 - 3x^2) = 0\\
+&\therefore x = \sqrt 3
+\end{split}
+\end{equation*}
+
+b) median%% median
+\begin{equation*}
+\begin{split}
+F(m) &= 0.5\\
+P(x \le m) &= 0.5\\
+& = \frac{4}{81} \int_0^m (9x-x^3) =  0.5 \\
+& = \frac{4}{81}\left(\frac92x^2-\frac14x^4\right)\bigg\lvert_0^m =  0.5\\
+& = 72m^2 - 4m^4 =  162\\
+& = 2m^4 - 36m^2 + 81 = 0
+\end{split}
+\end{equation*}
+Solving quadratically in $m^2$, i.e., ($ax^2 + bx + c = 0$);
+
+\begin{equation*}
+\begin{split}
+m^2 &= \frac{-b \pm \sqrt{b^2-4ac}}{2a}\\
+&= \frac{36 \pm \sqrt{36^2-4\cdot 2\cdot 81}}{2\cdot 81}\\
+&= 9 - \frac92\sqrt{2}\quad \mbox{or}\quad 9 + \frac92\sqrt{2}\\
+m^2 & = 9 - \frac92\sqrt{2}\\
+m &= \sqrt{9 - 9/2\sqrt{2}} = 1.6236\\
+\therefore\quad &\mbox{the median is}\quad \mathbf{1.6236}
+\end{split}
+\end{equation*}
+
+c) compare %% mean
+\begin{equation*}
+\begin{split}
+E(X) & = \int f(x)dx = \int_0^3 x\cdot\frac{4}{81}x(9-x^2)dx\\
+&=  \frac{4}{81}\left(3x^3 + \frac15x^5\right)\bigg\lvert_0^3\\
+&= \mathbf{1.60}
+\end{split}
+\end{equation*}
+
+Since $\mbox{mean} <\mbox{median} <\mbox{mode}$, the distribution of $X$ is said to be *skewed* to the left.
+
+ 
+%++++++++++++++++
+% Problem 3
+%++++++++++++++++
+\subsection*{$Q_{3}$ -- solution}
+Since $\bar{X}$ and $S^2$ are independent, we have;
+\begin{equation*}
+P(0 < \bar{X} < 6, 55.22 < S^2 < 145.6) = P(0 < \bar{X} < 6) \times P(55.22 < S^2 < 145.6)
+\end{equation*}
+\begin{equation*}
+\begin{split}
+P(0 < \bar{X} < 6) & = P\left(\frac{0 - 3}{\sqrt{\frac{100}{25}}} < z < \frac{6 - 3}{\sqrt{\frac{100}{25}}}\right)\\
+&= P(-1.5 < z < 1.5) \\
+&= 0.8664\\
+\end{split}
+\end{equation*}
+
+\begin{equation*}
+\begin{split}
+P(55.22 < S^2 < 145.6) & = P\left( \frac{155.2\times 25}{100} <\frac{nS^2}{\sigma^2} < \frac{145.6\times 25}{100}\right)\\
+& = P(13.8 < \chi_{24}^2 < 36.8)\\
+& = 0.95 - 0.05\\
+& = 0.90
+\end{split}
+\end{equation*}
+
+\begin{equation*}
+\therefore P(0 < \bar{X} < 6, 55.22 < S^2 < 145.6) = 0.8664 * 0.90 = \mathbf{0.8231}
+\end{equation*}
+
+
+
+
+
+
+\end{document}
