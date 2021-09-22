@@ -1,0 +1,107 @@
+---
+title: Simulating Random Walks in 5 minutes
+author: Abubakari Sumaila Salpawuni
+date: '2021-09-22'
+slug: simulating-random-walks-in-5-minutes
+categories: [Simulation study]
+tags: [random walks, simulation, shinyApp, stochastic process]
+subtitle: ''
+summary: 'A brief introduction to simulating random walks in R, as well as visualization etc.'
+authors: []
+lastmod: '2021-09-22T23:26:07+03:00'
+featured: no
+image:
+  caption: 'Image credit: [**Wolfgang Hasselmann**](https://unsplash.com/photos/bR_-gllg7Bs)'
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+  
+As you might have learnt at the undergraduate level, that a *stochastic process* is 'a collection of random variables indexed by time'. Indexed by *time*? What do we mean by that? Well, consider the weather condition of your locality now (sunny or cloudy). If it's sunny today, what would it be tomorrow? We know that, come tomorrow, it will either be sunny or cloudy. Thus, to some extent, we associate some degree of *uncertainty* to what your weather condition will be tomorrow, or $n$ days after tomorrow. In other words, our *random variable* (i.e, state of the weather) is modeled relative to *time* (today, tomorrow, etc). In 
+this post, we shall be considering a basic version of stochastic processes (Markov Chains) called **Random Walk**. The primary focus is to simulate data to illustrate what a simple random walk look like.
+
+A *random walk* is a stochastic process that illustrates a path of random steps in successions, of course defined on an integer space. It is not to be confused with 
+[brownian motion](https://en.wikipedia.org/wiki/Brownian_motion), a continuous case random walk. Natural phenomenon of this abound in nature. Example, in Biology, we may consider the motion of pollen grains in fluids; in Finance, looking at the financial time series of a stock market, a financial expert may want to know how the current market could possibly move against him/her. For an advanced discussion on this topic,
+[check this material](https://www.cambridge.org/core/books/elements-of-the-random-walk/6C6ED2F8C10A6BB0F54DD3DAB39AD7B0#:~:text=Elements%20of%20the%20Random%20Walk%20is%20an%20introduction%20to%20some,treatment%2C%20is%20the%20generating%20function.).
+
+Let us start with a basic simulation of random walk by considering a *heavily drunk man* who has completely lost his mind, who is determined to take every step regardless, and wanders around in an erratic fashion. For this example, we assume the man can only move one unit either to his right or left of current position. A trace of the paths taken by this man in a 300-walk, for instance, can be simulated in `R` with the vectorized `cumsum()` function. (Note: we assume $P(X_1 = -1) = P(X_1 = 1) = 1/2$). The visualization is shown below.
+
+
+```r
+library("tidyverse")
+set.seed(2021-09-22)
+n <- 300 # 300 random walks
+data.frame(x = 1:n, y = cumsum(sample(c(1,-1), n, replace=TRUE))) %>%
+  ggplot(aes(x=x, y=y)) + 
+  geom_point(size = 0.5) + geom_path(color = "blue") +
+  theme_void()
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/rw-1.png" width="90%" style="display: block; margin: auto;" />
+
+The random walk above only considered the direction of the movement (right or left), without special focus to varying distances (except trivially). In the following illustration, we shall be simulating a random walk that takes into consideration the *displacement* from the drunk man's current position. We consider a displacement space of ${0, 1, 2, 3, 4}$ in both directions, thus, $\mbox{displacement} = \{-4, -3, \ldots, 3, 4\}$. We demonstrate one instance of the walk, with $size = 20000$ random walks. The `green triangle` marks the starting point whiles the `red triangle` marks the final destination (step 20000). We shall also provide a link to a *shinyApp* where you may play around different simulation sizes, and get to see interesting plots.
+
+
+```r
+x_values = 0
+y_values = 0
+
+distance_space <- c(0, 1, 2, 3, 4)
+displacement <- c(-1, 1)
+
+set.seed(2021-09-22)
+num = 1 # looping point
+steps = 20000 # random walks to generate
+
+# data generation
+while (num < steps) {
+  walked <- replicate(2, sample(displacement, size = 1, replace = TRUE) * 
+                                        sample(distance_space, size = 1, replace = TRUE))
+  # disregard (0,0)
+  if(walked[1] == 0 && walked[2] == 0) 
+    next
+  x_values[num+1] = walked[1] + x_values[num]
+  y_values[num+1] = walked[2] + y_values[num]
+  num = num + 1
+}
+
+dat <- data.frame(x_values, y_values)
+            
+# plot random walks
+dat %>%
+  ggplot(aes(x = x_values, y_values)) + 
+                #geom_path(color = input$col) +
+                geom_point(size = 0.35, color = "#949CA3") +
+                theme_void() +
+                theme(axis.title=element_blank(),
+                      axis.text=element_blank(),
+                      axis.ticks=element_blank()) + #,
+                geom_point(data = dat[1,], aes(x = x_values, y = y_values),
+                           fill = "green", shape = 24, size = 2) + 
+                geom_point(data = dat[steps,], aes(x = x_values, y = y_values), 
+                           fill = "red", shape = 24, size = 2)
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/rw2-1.png" width="90%" style="display: block; margin: auto;" />
+
+
+For this random walk of size $20000$ is fairly large enough (at least, to me). What does the figure look like?. Well, it looks more  like a *cloud* -- wispy sort of. Okay, what happens if we increase the simulation size to, say, $50000$ or more, what would the shape look like? Again, from the above figure, looking at the starting point (green button) and final point (red button), we may say *stochasticity* is well represented in the figure. In other words, knowing the current position of the drunk man, we do not know in advance where exactly his next position will be. Thus, nondeterministic-ally, we are unable to predict exactly the final shape of the figure. However, we are well sure to say that, as the simulation size increases, we tend to lose the visual appeal of the plot (as overplotting setting in). To see this, follow the simple instructions below:
+
+<br>
+
+> Visit the the link: [ssalpawunishinyApps](https://ssalpawuni.shinyapps.io/deployed_random_walk/)
+
+> Use the *slider button* to change the number of simulations (between 10-50K)
+
+> Use the tick box to see where the simulation started and where it ended
+
+> Use the color picker window to choose your preferred *color*
+
+> Wait for the simulation result (about 20 seconds!)
+
+{{< spoiler text="Source code" >}} Find the code for this shinyApp at [my GitHub gist](https://gist.github.com/ssalpawuni/a456eb5e8f370d0b3e1a158631ef2ead)  {{< /spoiler >}}
+
+
+#### Any suggestions? Did you find this post helpful? You may consider sharing it😊😊😊
