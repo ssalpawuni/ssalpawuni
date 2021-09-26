@@ -321,7 +321,7 @@ X^\prime y =
 1.1195\\\\
 0.1098
 \end{pmatrix}\\\\[3mm]
-\therefore \hat{\beta} & = -2.3146 + 1.1195X_1 + 0.1098X_2
+\therefore \hat{y} & = -2.3146 + 1.1195X_1 + 0.1098X_2
 \end{split}
 \end{equation*}
 
