@@ -1,0 +1,421 @@
+---
+title: 'Tutorial 3: Worked Examples'
+author: Abubakari Sumaila Salpawuni
+date: '2021-09-25'
+slug: tutorial-3-worked-examples
+categories: [Question and Answers]
+tags: [moment generating function, regression, tranformation, Bayes theorem]
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-09-25T15:29:04+03:00'
+featured: no
+image:
+  caption: '[Image credit: **Mick Haupt**](https://unsplash.com/photos/nmmU9e9w5s0)'
+  focal_point: ''
+  preview_only: no
+projects: []
+url_code: "uploads/tutorial_3_salpawuni.tex"
+url_dataset: ""
+url_pdf: "uploads/tutorial_3_salpawuni.pdf"
+---
+
+```{r include = FALSE}
+options(blogdown.protect.math = FALSE)
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE,
+  fig.retina = 0.8,
+  dpi = 300,
+  out.width = "90%",
+  fig.align = 'center',
+  fig.show = "hold"
+)
+```
+
+## Introduction
+
+This is the *third* tutorial of a series of common problems in Statistics, alongside some suggested solutions. This particular tutorial primarily focuses on problems (deemed either basic or medium) for undergraduate Statistics (or First years master's education). You suggestions are are appreciated, and highly welcomed.
+
+## Problem 1 (Basic)
+
+**1.(a)**
+
+Suppose the length of a square is a random variable uniformly distributed on [0,1]. If X is the length of the square, calculate the expected area of the square.
+
+#### Sol.
+Given $X \sim U(0, 1)$. Define $g(x)$ as the area the square such that;
+\begin{equation*}
+\begin{split}
+\mbox{Area} & = g(x) = X^2\\\\
+E\big(g(x)\big) &= \int_0^1 g(x)f_X(x)dx\\\\
+E(X^2) & = \int_0^1 x^2 dx = \frac13x^3\bigg\lvert_0^1\\\\
+& = \frac 13 \mbox{sq. units}
+\end{split}
+\end{equation*}
+
+**1.(b)**
+
+Let $X_1, X_2, X_3, \ldots$ be independent random variables. Suppose the distribution of each $X_i$ is Poisson with parameter $\lambda_i \quad i = 1, 2, \ldots n$. Using moment generating function, show that $Y = \sum_{i = 1}^n X_i$ has Poisson distribution with parameter $\sum_{i=1}^n \lambda_i$.
+
+#### Sol.
+
+If $X_i \sim Poi(\lambda_i)$, then its moment generating function, *m.g.f*, is $M_X(t) = e^{[\lambda_i(e^t - 1)]}$. 
+
+Since the variables are independent, and for $Y = \sum_{i = 1}^n X_i$, we have;
+\begin{equation*}
+\begin{split}
+M_Y & = M_{X_1}(t) \cdot M_{X_2}(t)\ldots \cdot M_{X_n}(t)\\\\[2mm]
+& = e^{[\lambda_1 (e^t - 1)]} \cdot e^{[\lambda_2 (e^t - 1)]} \cdot \ldots \cdot e^{[\lambda_n (e^t - 1)]}\\\\[2mm]
+& = e^{[(\lambda_1 + \lambda_2 + \ldots + \lambda_n)(e^t - 1)]}\\\\[2mm]
+M_{\sum X_i}(t) & = e^{[\sum_{i=1}^n\lambda_i{(e^t - 1)]}}
+\end{split}
+\end{equation*}
+$\therefore  \sum_{i=1}^n X_i \sim \mbox{Poi} (\sum_i^n\lambda_i)$
+
+**1.(c)**
+
+Let $X$ be a random variable which follows a Gamma distribution defined as;
+\begin{equation*}
+f(x; n, \beta) = \frac{1}{(n-1)!\beta^n} x^{n-1}e^{-\frac{x}{\beta}} \quad 0 < x < \infty, \beta >0, n > 0
+\end{equation*}
+
+Find the probability density function for $g(x) = \frac 1x$.
+
+#### Sol.
+Given a density function, one way to solve this is to use  the *method of transformation*.
+
+Let $y = g(x) = \frac1x$. The density of $g(y)$ can be computed as;
+$$g(y) = \left \lvert \frac{dx}{dy} \right \rvert \cdot f(W(y))$$ where $W(y)$ is the inverse function of  g(x).
+
+\begin{equation*}
+\begin{split}
+y & = \frac1x \implies x  = \frac1y\\\\
+\left \lvert \frac{dx}{dy} \right \rvert & = \lvert -\frac{1}{y^2}\rvert = \frac{1}{y^2}
+\end{split}
+\end{equation*}
+
+\begin{equation*}
+\begin{split}
+g(x) &= \frac{1}{y^2} \times \frac{1}{(n-1)!\beta^n} \left(\frac{1}{y}\right)^{n-1}e^{-\frac{1}{y\beta}}\\\\[3mm]
+ & =  \frac{1}{(n-1)!\beta^n} \left(\frac{1}{y}\right)^{(n+2) - 1}e^{-\frac{1}{y\beta}}\\\\[2mm]
+\therefore g\left(\frac1x\right) & \sim  \mbox{Gamma}(n+2, \beta)
+\end{split}
+\end{equation*}
+
+## Problem 2 (Medium)
+
+**2.(a)**
+
+In a certain population, it is believed that $1.5\\%$ of the population has
+disease X. Assuming health providers in that community decide to embark on a
+free screening exercise for the said disease. And it is known that, for a person who
+has the disease, the test has an accuracy of $97\\%$ for a positive test result. Also, for
+a person who does not have the disease, the test has an accuracy of $95\\%$ for a
+negative test result. 
+
+**i.)** What is the probability that a test result returns positive?
+
+**ii.)** Assuming you presented yourself for testing and your test result came out positive for the disease. what is the probability that you actually have the disease?
+
+#### Sol.
+
+This is clearly a Bayesian problem. Define $D$ as an event that a subject has the disease; $T^+$ be event that a subject's test result returns positive, and the event that a subject's test result $T^-$ returns negative. Thus far, we proceed with the following pieces of information;
+
+\begin{equation*}
+\begin{split}
+P(D) &= 0.015 \quad \mbox{(prevalence)}\\\\
+P(T^+\vert D) &= 0.97 \quad \mbox{(sensitivity)}\\\\
+P(T^-\vert D^\prime) &= 0.95 \quad \mbox{(specificity)}
+\end{split}
+\end{equation*}
+
+**i.)**
+
+We partition $T$ into $T^+$ and $T^-$. Thus, 
+
+\begin{equation*}
+\begin{split}
+P(T^+|D) & = P(D)P(T^+\vert D) + P(D^\prime)P(T^+\vert D^\prime)\\\\
+& = 0.015 \times 0.97 + (1-0.015) \times (1-0.95)\\\\
+& = 0.905975
+\end{split}
+\end{equation*}
+
+**ii.)**
+
+We're interested in $P(D\vert T^+)$, the probability you have the disease given
+you tested positive to the disease. Using the Bayesian formulation, we proceed as follows:
+
+\begin{equation*}
+\begin{split}
+P(D\vert T^+) &= \frac{P(D)P(T^+\vert D)}{P(D)P(T^+\vert D) + P(D^\prime)P(T^+\vert D^\prime)}\\\\[2mm]
+&= \frac{0.015 \times 0.97}{0.905975}\\\\[2mm]
+&= 0.0161 (\mathbf{1.61\\%})
+\end{split}
+\end{equation*}
+
+**2.(b)**
+
+$40\\%$ of the products produced in a certain factory are produced by machine A. Machine B produces $10\\%$ of the products whiles machine C produces $50\\%$ of the products. Of these products produced, defective ones produced by these $3$ machines are $2\\%, 3\\%$ and $4\\%$ respectively. One of the products in the factory is selected at random.
+
+i.) Find the probability that this product is defective.
+
+ii.) If the product is defective, find the probability it is coming from: 
+
+$\alpha$. Machine A 
+
+$\beta$. Machine B 
+
+$\gamma$. Machine C
+
+#### Sol.
+
+$P(A) = 0.40, P(B) = 0.10, P(C) = 0.50$ <br><br>
+Let $D$ be the *event* that a defective product is produced <br><br>
+$P(D|A) = 0.02$ <br>
+$P(D|B) = 0.03$ <br>
+$P(D|C) = 0.04$ <br>
+
+**i.)**
+
+\begin{equation*}
+\begin{split}
+P(D) &= P(A)P(D|A) + P(B)P(D|B) + P(C)P(D|C)\\\\
+& = 0.40(0.02) + 0.10(0.03) + 0.50(0.04)\\\\
+& = 0.031
+\end{split}
+\end{equation*}
+
+**ii.)**
+
+$\alpha.$ $P(A|D) = \frac{P(A)P(D|A)}{P(D)} = \frac{0.40\times 0.02}{0.031} = \frac{8}{31}$
+
+$\beta.$ $P(B|D) = \frac{P(B)P(D|A)}{P(D)} = \frac{0.10\times 0.03}{0.031} = \frac{3}{31}$
+
+$\gamma.$ $P(C|D) = \frac{P(C)P(D|A)}{P(D)} = \frac{0.50\times 0.04}{0.031} = \frac{20}{31}$
+
+**2.(c)**
+
+$X_1, X_2$ are independent variables and $Y$ is the dependent variable. A sample of $10$ units is drawn as shown in the table below.
+
+```{r reg, echo=FALSE}
+dat <-
+  data.frame(x1 = c(5,5, 6, 6, 7, 7, 7, 8, 9, 10),
+             x2 = c(1, 1, 3, 4, 5, 6, 6, 5, 3, 6),
+             x3 = c(3, 4, 5, 5, 5, 6, 7, 7, 8, 10))
+colnames(dat) <- c("X.1", "X.2", "y")
+knitr::kable(dat, format = "html")
+```
+
+Find the equation of regression, $\hat{y} = \beta_0 + \beta_1X_1 + \beta X_2 + \epsilon$
+
+#### Sol.
+
+Using Matrix approach, Let $\hat{y} = X\beta + \epsilon$ such that;
+
+$$\beta = (X^\prime X)^{-1}X^\prime y$$
+
+\begin{equation*}
+\begin{split}
+X^\prime X & =
+\begin{pmatrix}
+1 & 1 & \ldots & 1\\\\
+5 & 6 & \ldots & 10\\\\
+1 & 1 & \ldots & 6
+\end{pmatrix}
+\begin{pmatrix}
+1 & 5 & 1\\\\
+1 & 6 & 1\\\\
+\vdots & \vdots & \vdots\\\\
+1 & 10 & 6 
+\end{pmatrix}\\\\
+& = \begin{pmatrix}
+10 & 70 & 40\\\\
+70 & 514 & 298\\\\
+40 & 298 & 194
+\end{pmatrix}
+\end{split}
+\end{equation*}
+
+\begin{equation*}
+\begin{split}
+(X^\prime X)^{-1} =
+\begin{pmatrix}
+2.2179 & -0.3374 & -0.0610\\\\
+-0.3374 & 0.0691 & −0.0366\\\\
+-0.0610 & −0.0366 & 0.0488
+\end{pmatrix}
+\end{split}
+\end{equation*}
+
+
+\begin{equation*}
+\begin{split}
+X^\prime y =
+\begin{pmatrix}
+60\\\\
+449\\\\
+264
+\end{pmatrix}
+\end{split}
+\end{equation*}
+
+\begin{equation*}
+\begin{split}
+\hat{\beta} & =
+\begin{pmatrix}
+2.2179 & -0.3374 & -0.0610\\\\
+-0.3374 & 0.0691 & −0.0366\\\\
+-0.0610 & −0.0366 & 0.0488
+\end{pmatrix}
+\begin{pmatrix}
+60\\\\
+449\\\\
+264
+\end{pmatrix}\\\\[2mm]
+& = \begin{pmatrix}
+-2.3146\\\\
+1.1195\\\\
+0.1098
+\end{pmatrix}\\\\[3mm]
+\therefore \hat{\beta} & = -2.3146 + 1.1195X_1 + 0.1098X_2
+\end{split}
+\end{equation*}
+
+{{% callout note %}}
+Go a little further and test $H_0: \beta_1 = 0 \quad \mbox{vs}\quad H_1: \beta_1 \neq 0$ at $\alpha = 0.05$. <br> <br>
+Hint: Use $t = \frac{\hat{\beta_1} - \beta_1}{\sqrt{S_E(\hat{\beta_1})}}$ and reject $H_0$ if $|t| > t_{\alpha, (n-p)}$
+{{% /callout %}}
+
+## Problem 3 (Basic-medium)
+
+**3.(a)**
+
+Suppose $X$ is a random variable with its density defined such that;
+
+\begin{equation*}
+f(x) = 
+\begin{cases}
+\frac{2}{5}|x|, & -1 < x < 2\\\\
+\\\\
+0, & \mbox{otherwise}
+\end{cases}
+\end{equation*}
+
+**i.** Evaluate $\int_{-\infty}^\infty xf(x)dx$
+
+**ii.** Find the variance of $X, \mbox{Var(X)}$.
+
+#### Sol.
+
+**i.**
+
+\begin{equation*}
+\begin{split}
+\int_{-\infty}^\infty xf(x)dx & = \int_{-1}^0 \frac{2x|x|}{5}dx + \int_{0}^2 \frac{2x|x|}{5}dx\\\\[2mm]
+E(X) & = -\frac25 \int_{-1}^0 x^2dx + \frac25 \int_{0}^2 x^2dx\\\\[2mm]
+& = -\frac{2}{15}x^3\bigg\lvert_{-1}^0 + \frac{2}{15}x^3\bigg\lvert_0^2\\\\[2mm]
+& = -\frac{2}{15} + \frac{16}{15}\\\\
+& = \frac{14}{15}.
+\end{split}
+\end{equation*}
+
+
+**ii.**
+
+\begin{equation*}
+\begin{split}
+\mbox{Var(X)} & = E(X^2) - \(E(X)\)^2 \\\\[2mm]
+& = -\int_{-1}^0 \frac{2x^2|x|}{5}dx + \int_{0}^2 \frac{2x^2|x|}{5}dx - \left(\frac{14}{15}\right)^2\\\\[2mm]
+& = -\frac{1}{10}x^4\bigg\lvert_{-1}^0 + \frac{1}{10}x^4\bigg\lvert_0^2 - \left(\frac{14}{15}\right)^2\\\\[2mm]
+& = -\frac{1}{10} + \frac{16}{10} - \left(\frac{14}{15}\right)^2 = \frac{17}{10}-\frac{196}{225}\\\\
+& = \frac{95}{102}.
+\end{split}
+\end{equation*}
+
+**3.(b)**
+
+A random variable, $Y$, is uniformly distributed over the interval (-1, 8), i.e. $Y \sim U(-1, 8)$.
+
+Find the probability that the equation $2x^2 + 4Yx + 3Y+2 = 0$ has real roots.
+
+#### Sol.
+
+\begin{equation*}
+Y\sim U(-1, 8) = 
+\begin{cases}
+\frac19, & -1 < x < 8\\\\
+\\\\
+0, & \mbox{otherwise}
+\end{cases}
+\end{equation*}
+
+For the equation $2x^2 + 4Yx + 3Y+2 = 0$ to have real roots, the *discriminant* must be non-negative, thus;
+
+\begin{equation*}
+\begin{split}
+b^2 - 4ac \ge 0 & \implies (4Y)^2 - 4(2)(3Y+2) \ge 0\\\\
+& \implies 16Y^2-24Y + 16 \ge 0\\\\
+& \implies 2Y^2 -8Y + 2 \ge 0\\\\
+&\implies Y \ge 2\quad \mbox{or}\quad Y \le -\frac12
+\end{split}
+\end{equation*}
+
+Using the probability density function above, and the idea of mutually exclusive events, we have;
+
+\begin{equation*}
+\begin{split}
+P(Y \le -\frac12 \cup Y \ge 2)  & = P(Y \le -\frac12) + P(Y \ge 2)\\\\[2mm]
+& = \int_{-1}^{\frac12}f_Y(y)dy + \int_2^8 f_Y(y)dy\\\\[2mm]
+& = \frac19(\frac12 + 6)\\\\[2mm]
+& = \frac{13}{18}.
+\end{split}
+\end{equation*}
+
+**3.(c)**
+
+A random variable X has moment generating function
+$$M_X(t) = \frac{0.5}{0.5 - t}, \quad t > \frac12$$
+Using this piece of information;
+
+**i.** $P(X > \mbox{In4})$ <br>
+**ii.** $E(X)$ <br>
+**iii.** $\mbox{Var(X)}$.
+
+#### Sol.
+
+Note that the *moment generating function* for the *Exponential distribution* is given as $M_X(t) = \frac{\lambda}{\lambda - t}, \quad t < \lambda$. Comparing this with the above function, we may infer that;
+
+\begin{equation*}
+f(x) = 
+\begin{cases}
+\frac12 e^{-\frac12\lambda t}, & t < \lambda \\\\
+\\\\
+0, & \mbox{otherwise}
+\end{cases}
+\end{equation*}
+
+**i.**
+
+The *cumulative density function* for the Exponential distribution is thus;
+$$1 - F(x) = e^{-\lambda t},\quad t < \lambda$$
+$\therefore P(X > \mbox{In4}) = e^{-\frac12\mbox{In4}} = \frac12.$
+
+**ii.**
+
+\begin{equation*}
+\begin{split}
+E(X) & = \frac{d}{dx}M_X(t)\bigg\lvert_{t = 0}\\\\
+& = \frac{0.5}{(0.5 - t)^2}\bigg\lvert_{t=0}\\\\
+& = 2\\\\[4mm]
+E(X^2) & = \frac{d^2}{dx^2}M_X(t)\bigg\lvert_{t = 0}\\\\
+& = \frac{2(0.5)}{(0.5 - t)^3}\bigg\lvert_{t= 0}\\\\
+& = 8\\\\[4mm]
+\mbox{Var(X)} & = E(X^2) - [E(X)]^2\\\\
+& = 8 - 2^2 = 4\\\\
+\therefore \mbox{Var(X)} & = 4.
+\end{split}
+\end{equation*}
+
+#### Did you find this post helpful? Any suggestions? Consider sharing it😊😊😊
