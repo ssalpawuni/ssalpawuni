@@ -1,0 +1,322 @@
+\documentclass[12pt,a4paper, fleq]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+\usepackage{relsize}
+\usepackage{float}
+\usepackage[sc]{mathpazo} 
+\usepackage{microtype}
+
+% Setting margins of the document ==========================================================
+\usepackage{geometry} % Required for adjusting page dimensions and margins
+
+\geometry{
+	paper=a4paper, % Paper size
+	top=2.5cm, % Top margin
+	bottom=3cm, % Bottom margin
+	left=2.5cm, % Left margin
+	right=2.5cm, % Right margin
+	headheight=14pt, % Header height
+	footskip=1.5cm, % Space from the bottom margin to the baseline of the footer
+	headsep=1.2cm, % Space from the top margin to the baseline of the header
+}
+% PGF plots
+\usepackage{pgfplots, pgfplotstable}
+
+\begin{document}
+
+%====== creating the title of the document===============
+\title{\textcolor{blue}{Tutorial 3 (Abubakari Sumaila Salpawuni)}}\vskip -3mm
+
+\date{\textcolor{blue}{\today}}
+\maketitle
+%=========================================
+
+%++++++++++++++++
+% Problem 1
+%++++++++++++++++
+\subsection*{$Q_{1}$ -- solution}
+
+\begin{itemize}
+\item[1.(a)] % Question 1.a
+Given $X \sim U(0, 1)$. Define $g(x)$ as the area the square such that;
+\begin{equation*}
+\begin{split}
+\mbox{Area} & = g(x) = X^2\\
+E\big(g(X)\big) &= \int_0^1 g(x)f_X(x)dx\\
+E(X^2) & = \int_0^1 x^2 dx = \frac13x^3\bigg\lvert_0^1\\
+& = \frac 13 \mbox{sq. units}
+\end{split}
+\end{equation*}
+
+\item[1.(b)] % Question 1.b
+If $X_i \sim Poi(\lambda_i)$, then it moment generating function, {\it m.g.f}, is $M_X(t) = e^{[\lambda_i(e^t - 1)]}$. Since the variables are independent, we have;
+\begin{equation*}
+\begin{split}
+M_Y & = M_{X_1}(t) \cdot M_{X_2}(t)\ldots \cdot M_{X_n}(t)\\
+& = e^{[\lambda_1 (e^t - 1)]} \cdot e^{[\lambda_2 (e^t - 1)]} \cdot \ldots \cdot e^{[\lambda_n (e^t - 1)]}\\
+& = e^{[(\lambda_1 + \lambda_2 + \ldots + \lambda_n)(e^t - 1)]}\\
+& = e^{[\sum_{i=1}^n\lambda_i{(e^t - 1)]}}
+\end{split}
+\end{equation*}
+$\therefore  \sum_{i=1}^n X_i \sim \mbox{Poi} (\sum_i^n\lambda_i)$
+
+\item[1.(c)] % Question 1.c
+Given a density function, one way to solve this is to use  the {\it method of transformation}.
+
+ Let $y = g(x) = \frac1x$. The density of $g(y)$ can be computed as;
+$$g(y) = \left \lvert \frac{dx}{dy} \right \rvert \cdot f(W(y))$$ where $W(y)$ is the inverse function of  g(x).
+
+\begin{equation*}
+\begin{split}
+y & = \frac1x \implies x  = \frac1y\\
+\left \lvert \frac{dx}{dy} \right \rvert & = -\frac{1}{y^2} = \frac{1}{y^2}
+\end{split}
+\end{equation*}
+
+\begin{equation*}
+\begin{split}
+g(x) &= \frac{1}{y^2} \times \frac{1}{(n-1)!\beta^n} \left(\frac{1}{y}\right)^{n-1}e^{-\frac{1}{y\beta}}\\
+ & =  \frac{1}{(n-1)!\beta^n} \left(\frac{1}{y}\right)^{(n+2) - 1}e^{-\frac{1}{y\beta}}\\
+\therefore g\left(\frac1x\right) & =  \mbox{Gamma}(n+2, \beta)
+\end{split}
+\end{equation*}
+
+\end{itemize}
+
+
+
+%++++++++++++++++
+% Problem 2
+%++++++++++++++++
+\subsection*{$Q_{2}$ -- solution}
+This is clearly a Bayesian problem. Define $D$ as an event that a subject has the disease; $T^+$ be event that a subject's test result returns positive, and the event that a subject's test result $T^-$ returns negative. Thus far, we proceed with the following pieces of information;
+
+\begin{equation*}
+\begin{split}
+P(D) &= 0.015 \quad \mbox{(prevalence)}\\
+P(T^+\vert D) &= 0.97 \quad \mbox{(sensitivity)}\\
+P(T^-\vert D^\prime) &= 0.95 \quad \mbox{(specificity)}
+\end{split}
+\end{equation*}
+
+\begin{itemize}
+\item[2.(a)] % Question 2.(a)
+\begin{itemize}
+\item[i.]
+We partition $T$ into $T^+$ and $T^-$. Thus, 
+\begin{equation*}
+\begin{split}
+P(T^+|D) & = P(D)P(T^+\vert D) + P(D^\prime)P(T^+\vert D^\prime)\\
+& = 0.015 \times 0.97 + (1-0.015) \times (1-0.95)\\
+& = 0.905975
+\end{split}
+\end{equation*}
+
+\item[ii.]
+We're interested in $P(D\vert T^+)$, the probability you have the disease given
+you tested positive to the disease. Using the Bayesian formulation, we proceed as follows:
+\begin{equation*}
+\begin{split}
+P(D\vert T^+) &= \frac{P(D)P(T^+\vert D)}{P(D)P(T^+\vert D) + P(D^\prime)P(T^+\vert D^\prime)}\\[2mm]
+&= \frac{0.015 \times 0.97}{0.905975}\\[2mm]
+&= 0.0161 (\mathbf{1.61\%})
+\end{split}
+\end{equation*}
+\end{itemize}
+
+\item[2.(b)] % Question 2.(b)
+$P(A) = 0.40, P(B) = 0.10, P(C) = 0.50$\\
+Let $D$ be the {\it event} that a defective product is produced\\
+$P(D|A) = 0.02$\\
+$P(D|B) = 0.03$ \\
+$P(D|C) = 0.04$ 
+
+\begin{itemize}
+\item[i.]
+\begin{equation*}
+\begin{split}
+P(D) &= P(A)P(D|A) + P(B)P(D|B) + P(C)P(D|C)\\
+& = 0.40(0.02) + 0.10(0.03) + 0.50(0.04)\\
+& = 0.031
+\end{split}
+\end{equation*}
+
+\item[ii.]
+$\alpha.$ $P(A|D) = \frac{P(A)P(D|A)}{P(D)} = \frac{0.40\times 0.02}{0.031} = \frac{8}{31}$
+
+$\beta.$ $P(B|D) = \frac{P(B)P(D|A)}{P(D)} = \frac{0.10\times 0.03}{0.031} = \frac{3}{31}$
+
+$\gamma.$ $P(C|D) = \frac{P(C)P(D|A)}{P(D)} = \frac{0.50\times 0.04}{0.031} = \frac{20}{31}$
+\end{itemize}
+
+\item[3.(c)] % Question 2.(c)
+Using Matrix approach, Let $\hat{y} = X\beta + \epsilon$ such that;
+$$\beta = (X^\prime X)^{-1}X^\prime y$$
+
+\begin{equation*}
+\begin{split}
+X^\prime X & =
+\begin{pmatrix}
+1 & 1 & \ldots & 1\\
+5 & 6 & \ldots & 10\\
+1 & 1 & \ldots & 6
+\end{pmatrix}
+\begin{pmatrix}
+1 & 5 & 1\\
+1 & 6 & 1\\
+\vdots & \vdots & \vdots\\
+1 & 10 & 6 
+\end{pmatrix}\\
+& = \begin{pmatrix}
+10 & 70 & 40\\
+70 & 514 & 298\\
+40 & 298 & 194
+\end{pmatrix}
+\end{split}
+\end{equation*}
+\begin{equation*}
+\begin{split}
+(X^\prime X)^{-1} =
+\begin{pmatrix}
+2.2179 & -0.3374 & -0.0610\\
+-0.3374 & 0.0691 & −0.0366\\
+-0.0610 & −0.0366 & 0.0488
+\end{pmatrix}
+\end{split}
+\end{equation*}
+\begin{equation*}
+\begin{split}
+X^\prime y =
+\begin{pmatrix}
+60\\
+449\\
+264
+\end{pmatrix}
+\end{split}
+\end{equation*}
+\begin{equation*}
+\begin{split}
+\hat{\beta} & =
+\begin{pmatrix}
+2.2179 & -0.3374 & -0.0610\\
+-0.3374 & 0.0691 & −0.0366\\
+-0.0610 & −0.0366 & 0.0488
+\end{pmatrix}
+\begin{pmatrix}
+60\\
+449\\
+264
+\end{pmatrix}\\[2mm]
+& = \begin{pmatrix}
+-2.3146\\
+1.1195\\
+0.1098
+\end{pmatrix}\\[3mm]
+\therefore \hat{\beta} & = -2.3146 + 1.1195X_1 + 0.1098X_2
+\end{split}
+\end{equation*}
+\end{itemize}
+
+%++++++++++++++++
+% Problem 3
+%++++++++++++++++
+\subsection*{$Q_{3}$ -- solution}
+\begin{itemize}
+\item[3.(a)]
+\begin{itemize}
+\item[i.]
+\begin{equation*}
+\begin{split}
+\int_{-\infty}^\infty xf(x)dx & = \int_{-1}^0 \frac{2x|x|}{5}dx + \int_{0}^2 \frac{2x|x|}{5}dx\\[2mm]
+E(X) & = -\frac25 \int_{-1}^0 x^2dx + \frac25 \int_{0}^2 x^2dx\\[2mm]
+& = -\frac{2}{15}x^3\bigg\lvert_{-1}^0 + \frac{2}{15}x^3\bigg\lvert_0^2\\[2mm]
+& = -\frac{2}{15} + \frac{16}{15}\\
+& = \frac{14}{15}.
+\end{split}
+\end{equation*}
+
+\item[ii.]
+\begin{equation*}
+\begin{split}
+\mbox{Var(X)} & = E(X^2) - [E(X)]^2 \\[2mm]
+& = -\int_{-1}^0 \frac{2x^2|x|}{5}dx + \int_{0}^2 \frac{2x^2|x|}{5}dx - \left(\frac{14}{15}\right)^2\\[2mm]
+& = -\frac{1}{10}x^4\bigg\lvert_{-1}^0 + \frac{1}{10}x^4\bigg\lvert_0^2 - \left(\frac{14}{15}\right)^2\\[2mm]
+& = -\frac{1}{10} + \frac{16}{10} - \left(\frac{14}{15}\right)^2 = \frac{17}{10}-\frac{196}{225}\\
+& = \frac{95}{102}.
+\end{split}
+\end{equation*}
+\end{itemize}
+
+\item[3.(b)]
+\begin{equation*}
+Y\sim U(-1, 8) = 
+\begin{cases}
+\frac19, & -1 < x < 8\\
+\\
+0, & \mbox{otherwise}
+\end{cases}
+\end{equation*}
+
+For the equation $2x^2 + 4Yx + 3Y+2 = 0$ to have real roots, the *discriminant* must be non-negative, thus;
+
+\begin{equation*}
+\begin{split}
+b^2 - 4ac \ge 0 & \implies (4Y)^2 - 4(2)(3Y+2) \ge 0\\
+& \implies 16Y^2-24Y + 16 \ge 0\\
+& \implies 2Y^2 -8Y + 2 \ge 0\\
+&\implies Y \ge 2\quad \mbox{or}\quad Y \le -\frac12
+\end{split}
+\end{equation*}
+Using the probability density function above, and the idea of mutually exclusive events, we have;
+\begin{equation*}
+\begin{split}
+P(Y \le -\frac12 \cup Y \ge 2)  & = P(Y \le -\frac12) + P(Y \ge 2)\\[2mm]
+& = \int_{-1}^{\frac12}f_Y(y)dy + \int_2^8 f_Y(y)dy\\[2mm]
+& = \frac19(\frac12 + 6)\\[2mm]
+& = \frac{13}{18}.
+\end{split}
+\end{equation*}
+
+\item[3.(c)]
+Note that the {\it moment generating function} for the {\it Exponential distribution} is given as $M_X(t) = \frac{\lambda}{\lambda - t}, \quad t < \lambda$. Comparing this with the above function, we may infer that;
+\begin{equation*}
+f(x) = 
+\begin{cases}
+\frac12 e^{-\frac12\lambda t}, & t < \lambda \\
+\\
+0, & \mbox{otherwise}
+\end{cases}
+\end{equation*}
+
+\begin{itemize}
+\item[i.]
+The {\it cumulative density function} for the Exponential distribution is thus;
+$$1 - F(x) = e^{-\lambda t},\quad t < \lambda$$
+$\therefore P(X > \mbox{In4}) = e^{-\frac12\mbox{In4}} = \frac12.$
+
+\item[ii.]
+\begin{equation*}
+\begin{split}
+E(X) & = \frac{d}{dx}M_X(t)\bigg\lvert_{t = 0}\\
+& = \frac{0.5}{(0.5 - t)^2}\bigg\lvert_{t=0}\\
+& = 2\\[4mm]
+E(X^2) & = \frac{d^2}{dx^2}M_X(t)\bigg\lvert_{t = 0}\\
+& = \frac{2(0.5)}{(0.5 - t)^3}\bigg\lvert_{t= 0}\\
+& = 8\\[4mm]
+\mbox{Var(X)} & = E(X^2) - [E(X)]^2\\
+& = 8 - 2^2 = 4\\
+\therefore \mbox{Var(X)} & = 4.
+\end{split}
+\end{equation*}
+
+\end{itemize}
+\end{itemize}
+
+\end{document}
