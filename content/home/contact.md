@@ -10,7 +10,7 @@ headless: true
 weight: 130
 
 title: Hi there! #Contact
-subtitle: Feel free to contact me for opportunities. We could work together.
+subtitle: Feel free to contact me for a possible collaboration.
 
 content:
   # Automatically link email and phone or display as text?
