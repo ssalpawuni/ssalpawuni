@@ -1,277 +1,259 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<!--	created with www.mysitemapgenerator.com	-->
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-  <loc>https://ssalpawuni.rbind.io/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>1.00</priority>
+	<loc>https://ssalpawuni.rbind.io/</loc>
+	<lastmod>2021-11-20T13:38:55+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/uploads/my-resume.pdf</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ssalpawuni.rbind.io/post/2021/simulating-random-walks-in-5-minutes/</loc>
+	<lastmod>2021-11-20T13:38:58+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/post/2021/simulating-random-walks-in-5-minutes/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ssalpawuni.rbind.io/category/simulation-study/</loc>
+	<lastmod>2021-11-20T13:38:59+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/category/simulation-study/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ssalpawuni.rbind.io/post/2021/let-s-talk-briefly-about-bayesian-statistics/</loc>
+	<lastmod>2021-11-20T13:38:59+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/post/2021/let-s-talk-briefly-about-bayesian-statistics/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ssalpawuni.rbind.io/category/bayesian-statistics/</loc>
+	<lastmod>2021-11-20T13:38:59+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/category/bayesian-statistics/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ssalpawuni.rbind.io/post/2021/hi-hugo/</loc>
+	<lastmod>2021-11-20T13:39:00+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/post/2021/hi-hugo/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ssalpawuni.rbind.io/post/</loc>
+	<lastmod>2021-11-20T13:39:00+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/post/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ssalpawuni.rbind.io/project/tutorial-3-worked-examples/</loc>
+	<lastmod>2021-11-20T13:39:01+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/project/tutorial-3-worked-examples/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ssalpawuni.rbind.io/uploads/tutorial_3_salpawuni.pdf</loc>
+	<lastmod>2021-11-20T13:39:01+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/uploads/tutorial_3_salpawuni.pdf</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ssalpawuni.rbind.io/project/tutorial-2-worked-examples/</loc>
+	<lastmod>2021-11-20T13:39:05+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/project/tutorial-2-worked-examples/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ssalpawuni.rbind.io/uploads/tutorial_2_salpawuni.pdf</loc>
+	<lastmod>2021-11-20T13:39:06+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/uploads/tutorial_2_salpawuni.pdf</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ssalpawuni.rbind.io/project/tutorial-1-worked-examples/</loc>
+	<lastmod>2021-11-20T13:39:09+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/project/tutorial-1-worked-examples/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ssalpawuni.rbind.io/project/internal-project/</loc>
+	<lastmod>2021-11-20T13:39:10+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/uploads/tutorial_1_salpawuni.pdf</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ssalpawuni.rbind.io/publication/</loc>
+	<lastmod>2021-11-20T13:39:11+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/project/internal-project/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ssalpawuni.rbind.io/publication/preprint/</loc>
+	<lastmod>2021-11-20T13:39:09+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/publication/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ssalpawuni.rbind.io/authors/admin/</loc>
+	<lastmod>2021-11-20T13:39:10+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/publication/preprint/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ssalpawuni.rbind.io/slides/example/</loc>
+	<lastmod>2021-11-20T13:39:10+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/authors/admin/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ssalpawuni.rbind.io/publication/journal-article/</loc>
+	<lastmod>2021-11-20T13:39:11+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/slides/example/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ssalpawuni.rbind.io/tag/random-walks/</loc>
+	<lastmod>2021-11-20T13:39:19+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/publication/journal-article/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ssalpawuni.rbind.io/tag/simulation/</loc>
+	<lastmod>2021-11-20T13:39:19+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/tag/random-walks/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/tag/shinyapp/</loc>
+	<lastmod>2021-11-20T13:39:20+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/tag/simulation/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/tag/stochastic-process/</loc>
+	<lastmod>2021-11-20T13:39:19+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/tag/shinyapp/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/tag/r/</loc>
+	<lastmod>2021-11-20T13:39:20+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/tag/stochastic-process/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/tag/likelihood/</loc>
+	<lastmod>2021-11-20T13:39:20+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/tag/r/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/tag/prior/</loc>
+	<lastmod>2021-11-20T13:39:20+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/tag/likelihood/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/tag/posterior/</loc>
+	<lastmod>2021-11-20T13:39:20+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/tag/prior/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/tag/bayesian-statistics/</loc>
+	<lastmod>2021-11-20T13:39:21+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/tag/posterior/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/tag/conjugate-priors/</loc>
+	<lastmod>2021-11-20T13:39:21+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/tag/bayesian-statistics/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/post/2020/hail-malcolm-x/</loc>
+	<lastmod>2021-11-20T13:39:21+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/tag/conjugate-priors/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/category/survival-analysis/</loc>
+	<lastmod>2021-11-20T13:39:21+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/post/2020/hail-malcolm-x/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/category/mamata-azumi/</loc>
+	<lastmod>2021-11-20T13:39:21+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/category/survival-analysis/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/post/2020/hello-r-markdown/</loc>
+	<lastmod>2021-11-20T13:39:21+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/category/mamata-azumi/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/category/r/</loc>
+	<lastmod>2021-11-20T13:39:22+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/post/2020/hello-r-markdown/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/category/question-and-answers/</loc>
+	<lastmod>2021-11-20T13:39:22+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/category/r/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/tag/moment-generating-function/</loc>
+	<lastmod>2021-11-20T13:39:22+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/category/question-and-answers/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/tag/regression/</loc>
+	<lastmod>2021-11-20T13:39:22+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/tag/moment-generating-function/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/tag/tranformation/</loc>
+	<lastmod>2021-11-20T13:39:22+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/tag/regression/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/tag/bayes-theorem/</loc>
+	<lastmod>2021-11-20T13:39:22+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/tag/tranformation/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/tag/maximum-likelihood/</loc>
+	<lastmod>2021-11-20T13:39:23+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/tag/bayes-theorem/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/tag/methods-of-moments/</loc>
+	<lastmod>2021-11-20T13:39:23+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/tag/maximum-likelihood/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/tag/skewness/</loc>
+	<lastmod>2021-11-20T13:39:23+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/tag/methods-of-moments/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/tag/source-themes/</loc>
+	<lastmod>2021-11-20T13:39:23+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/tag/skewness/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/publication/conference-paper/</loc>
+	<lastmod>2021-11-20T13:39:23+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/tag/data-mining/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/tag/data-mining/</loc>
+	<lastmod>2021-11-20T13:39:23+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/tag/survival-analysis/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/tag/survival-analysis/</loc>
+	<lastmod>2021-11-20T13:39:24+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/publication/conference-paper/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/authors/robert-ford/</loc>
+	<lastmod>2021-11-20T13:39:24+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/authors/robert-ford/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/talk/example-talk/</loc>
+	<lastmod>2021-11-20T13:39:24+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/talk/example-talk/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/tag/brain-power/</loc>
+	<lastmod>2021-11-20T13:39:24+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/tag/source-themes/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ssalpawuni.rbind.io/tag/black-power/</loc>
+	<lastmod>2021-11-20T13:39:24+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/tag/brain-power/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ssalpawuni.rbind.io/tag/r-markdown/</loc>
+	<lastmod>2021-11-20T13:39:24+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ssalpawuni.rbind.io/tag/black-power/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ssalpawuni.rbind.io/tag/plot/</loc>
+	<lastmod>2021-11-20T13:39:25+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
-<url>
-  <loc>https://ssalpawuni.rbind.io/tag/r-markdown/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://ssalpawuni.rbind.io/tag/plot/</loc>
-  <lastmod>2021-09-26T17:57:06+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-
-
 </urlset>
