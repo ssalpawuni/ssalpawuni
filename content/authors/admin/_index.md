@@ -14,14 +14,16 @@ education:
 email: "abubakarisumaila3@gmail.com"
 highlight_name: false
 interests:
+- Bioinformatics
 - Survival Analysis in Medicine
+- Complex high-dimensional modeling
 - Sequential Decision Processes
 - Data Mining with R
 - Machine Learning with Python
 organizations:
 - name: Yildiz Technical University, Istanbul
   url: https://www.yildiz.edu.tr/
-role: PhD candidate (Statistics)
+role: PhD candidate (Biostatistics)
 social:
 - icon: envelope
   icon_pack: fas
