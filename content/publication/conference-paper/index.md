@@ -1,15 +1,21 @@
 ---
-abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus
-  ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed
-  ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis
-  sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida
-  egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id
-  dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus.
-  Vestibulum sit amet erat at nulla eleifend gravida.
+abstract: 'Due to the presence of censoring in survival data, there has 
+been a growing interest in using deep neural networks to deal with the 
+complexities of survival datasets. Though a great number of deep neural 
+network models have been proposed in recent times, these models usually 
+require the development of special loss functions to deal with censoring 
+in the data. In this article, we propose a simpler approach to achieving 
+the same goal by using jackknife pseudo survival probabilities as a 
+quantitative response variable that can be easily handled by a deep 
+neural network model. This approach, thus reduces a complex problem 
+to a traditional regression problem. Further, our model directly 
+outputs the conditional probability of a subject surviving given that 
+the subject earlier on survived. This can be a very desirable feature 
+from a practical point of view. We name our model as exDeepsurv.'
 authors:
-- admin
-- Robert Ford
-date: "2013-07-01T00:00:00Z"
+- Sumail Abubakari
+- Filiz Karaman
+date: "2023-03-11T00:00:00Z"
 doi: ""
 featured: true
 image:
@@ -21,17 +27,28 @@ links:
   url: http://example.org
 projects:
 - internal-project
-publication: In *Source Themes Conference*
-publication_short: In *STC*
+publication: In *International Researchers, Statisticians, and Young Statisticians Congress*
+publication_short: In *IRSYSC 2023*
 publication_types:
 - "1"
-publishDate: "2017-01-01T00:00:00Z"
+publishDate: "2023-03-11T00:00:00Z"
 slides: example
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus
-  ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
+summary: 'Due to the presence of censoring in survival data, there has 
+been a growing interest in using deep neural networks to deal with the 
+complexities of survival datasets. Though a great number of deep neural 
+network models have been proposed in recent times, these models usually 
+require the development of special loss functions to deal with censoring 
+in the data. In this article, we propose a simpler approach to achieving 
+the same goal by using jackknife pseudo survival probabilities as a 
+quantitative response variable that can be easily handled by a deep 
+neural network model. This approach, thus reduces a complex problem 
+to a traditional regression problem. Further, our model directly 
+outputs the conditional probability of a subject surviving given that 
+the subject earlier on survived. This can be a very desirable feature 
+from a practical point of view. We name our model as exDeepsurv.'
 tags:
-- Source Themes
-title: An example conference paper
+- jackknife, survival prospects, pseudo-values, neural network
+title: "exDNNsurv: Using Deep Neural Network as An Extension to Traditional Survival Modeling"
 url_code: '#'
 url_dataset: '#'
 url_pdf: http://eprints.soton.ac.uk/352095/1/Cushen-IMV2013.pdf
