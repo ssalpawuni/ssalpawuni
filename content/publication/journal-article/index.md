@@ -40,7 +40,7 @@ publication_short: "Salpawuni"
 publication_types:
   - "2"
 publishDate: "2024-09-30:00:00Z"
-slides: example
+slides: ""
 summary: "Survival analysis plays a central role in diverse research fields, 
 especially in health sciences. As an analytical tool, it can be used to help 
 improve patients’ survival time, or at least, reduce the prospects of recurrence 
@@ -65,10 +65,11 @@ and scientists, we hope our findings provide practical guidance for benchmark
 studies of survival models, as well as highlight potential areas of research interest."
 tags:
 - Source Themes
-title: Research article
+title: "Neutral Benchmarking of Survival Models in Health Sciences: 
+Comparative Study of Classical and Machine Learning Techniques"
 url_code: ""
 url_dataset: ""
-url_pdf: ""
+url_pdf: "uploads/10.54287-gujsa.1505905-4026278.pdf"
 url_poster: ""
 url_project: ""
 url_slides: ""

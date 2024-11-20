@@ -15,7 +15,7 @@ from a practical point of view. We name our model as exDeepsurv.'
 authors:
 - Sumail Abubakari
 - Filiz Karaman
-date: "2023-03-11T00:00:00Z"
+date: "2023-11-03T00:00:00Z"
 doi: ""
 featured: true
 image:
@@ -23,16 +23,16 @@ image:
   focal_point: ""
   preview_only: false
 links:
-- name: Custom Link
-  url: http://example.org
+- name: IRSYSC2023
+  url: http://www.irsysc2023.yildiz.edu.tr/
 projects:
 - internal-project
-publication: In *International Researchers, Statisticians, and Young Statisticians Congress*
-publication_short: In *IRSYSC 2023*
+publication: "*International Researchers, Statisticians, and Young Statisticians Congress*"
+publication_short: "*IRSYSC 2023*"
 publication_types:
 - "1"
-publishDate: "2023-03-11T00:00:00Z"
-slides: example
+publishDate: "2023-11-03T00:00:00Z"
+slides: ""
 summary: 'Due to the presence of censoring in survival data, there has 
 been a growing interest in using deep neural networks to deal with the 
 complexities of survival datasets. Though a great number of deep neural 
@@ -49,14 +49,14 @@ from a practical point of view. We name our model as exDeepsurv.'
 tags:
 - jackknife, survival prospects, pseudo-values, neural network
 title: "exDNNsurv: Using Deep Neural Network as An Extension to Traditional Survival Modeling"
-url_code: '#'
-url_dataset: '#'
-url_pdf: http://eprints.soton.ac.uk/352095/1/Cushen-IMV2013.pdf
-url_poster: '#'
-url_project: ""
-url_slides: ""
-url_source: '#'
-url_video: '#'
+url_code: ''
+url_dataset: ''
+url_pdf: 'https://dps.tuik.gov.tr/index.php/s/WFS1Lrh5hUTyuV8'
+url_poster: 'http://www.irsysc2023.yildiz.edu.tr/'
+url_project: ''
+url_slides: ''
+url_source: ''
+url_video: 'https://www.youtube.com/watch?v=hE2N87kN_4U'
 ---
 
 {{% callout note %}}
