@@ -25,7 +25,7 @@ author_notes:
 - Conceptualization, methodology, visualization, Software, original draft preparation
 - Supervision, validation, reviewing and editing, data curation
 authors:
-- Sumail Abubakari
+- Sumaila Abubakari
 - Filiz Karaman
 date: "2024-09-30T00:00:00Z"
 doi: "https://doi.org/10.54287/gujsa.1505905"
