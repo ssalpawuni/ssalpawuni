@@ -11,7 +11,7 @@ education:
   - course: BSc in Statistics
     institution: University of Cape Coast, Cape Coast, Ghana
     year: 2013
-email: "abubakarisumaila3@gmail.com"
+email: "abubakarisumaila3@gmail.com" 
 highlight_name: false
 interests:
 - Bioinformatics
