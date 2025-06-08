@@ -1,15 +1,5 @@
 ---
-abstract: "The most common form of liver cancer and one of the leading 
-causes of cancer-related deaths worldwide is hepatocellular carcinoma (HCC).
- HCC is the ninth most frequent cause of cancer-related fatalities in 
-the US. The number of cases and fatalities continues to rise despite 
-advancements in screening, prevention strategies, and new diagnostic and 
-therapeutic technologies. Regardless of the source, cirrhosis remains the 
-most significant risk factor for HCC development. Cirrhosis can develop 
-as a result of distinct risk factors for hepatitis B and C. Since alcohol 
-misuse is five times more common than hepatitis C, drinking alcohol poses 
-a serious additional risk in the US. The diagnosis is verified even in the 
-absence of any..."
+abstract: "Available at [Publication Schedule of 2025 & 2026](https://eds.yildiz.edu.tr/sigma/Announcements/85)"
 authors:
 - Sumaila Abubakari
 - Filiz Karaman
@@ -31,11 +21,10 @@ publication_types:
 - "3"
 publishDate: "2024-09-21T00:00:00Z"
 slides: ''
-summary: Risk Score prediction of HCC patients ...
+summary: Hepatocellular carcinoma (HCC) is a primary liver cancer with a prognosis influenced by clinical and gene expression factors. Using RNA-seq data from TCGA-LIHC, we found 3,623 genes expressed differently and used survival analysis, machine learning, and pathway enrichment to discover markers related to tumor growth. Three prognostic genes (CA9, AP1M1, and CASC9) were associated with survival, while diagnostic markers highlighted metabolic dysfunction in HCC. Our study demonstrates the power of integrative bioinformatics in identifying key molecular targets, offering insights for precision oncology and improved patient management.
 tags:
 - Sigma Journal of Engineering and Natural Sciences
-title: "Expository Techniques to Survival Modeling: Predicting the Risk Score of
-Hepatocellular Carcinoma Patients"
+title: "Expository Techniques and Integrative Bioinformatics for Survival Modeling: Screening Potential Biomarkers in Hepatocellular Carcinoma"
 url_code: ''
 url_dataset: ''
 url_pdf: ''
