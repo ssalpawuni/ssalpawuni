@@ -34,9 +34,6 @@ social:
   icon_pack: fab
   label: Follow me on Twitter
   link: https://x.com/ssalpawun/
-# - icon: graduation-cap
-#   icon_pack: fas
-#   link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ-451 # added -45
 - icon: orcid
   icon_pack: ai
   link: https://orcid.org/my-orcid?orcid=0000-0003-4375-6273
