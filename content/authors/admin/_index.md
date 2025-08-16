@@ -36,7 +36,7 @@ social:
   link: https://x.com/ssalpawun/
 - icon: orcid
   icon_pack: ai
-  link: https://orcid.org/my-orcid?orcid=0000-0003-4375-6273
+  link: https://orcid.org/0000-0003-4375-6273
 - icon: github
   icon_pack: fab
   link: https://github.com/ssalpawuni/
