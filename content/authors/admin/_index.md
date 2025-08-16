@@ -65,4 +65,4 @@ where he primarily rendered services in data analysis using `R` and `Python`.
 In his free time, Abubakari enjoys watching football, reading science fiction, 
 and photography.
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/my-resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/salpawuni-resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
