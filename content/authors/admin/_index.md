@@ -3,10 +3,10 @@ bio: My research interests include the applications of survival analysis in Medi
 education:
   courses:
   - course: PhD in Statistics (Biostatistics)
-    institution: Yildiz Technical University, Istanbul, Turkey
+    institution: Yildiz Technical University, Istanbul, Türkiye
     year: 2025
   - course: M.Res in Statistics
-    institution: Dokuz Eylül University, Izmir, Turkey
+    institution: Dokuz Eylül University, Izmir, Türkiye
     year: 2019
   - course: BSc in Statistics
     institution: University of Cape Coast, Cape Coast, Ghana
