@@ -71,5 +71,5 @@ related:
       weight: 70
       
 ## (My own inclusion)
-sitemap:
-  filename: static/sitemap.xml
+# sitemap:
+#   filename: static/sitemap.xml
