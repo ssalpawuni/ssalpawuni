@@ -16,6 +16,7 @@ highlight_name: false
 interests:
 - Bioinformatics
 - Survival Analysis in Medicine
+- Cutaneous Melanoma (CM) biology
 - Complex high-dimensional modeling
 - Sequential Decision Processes
 - Data Mining with R
