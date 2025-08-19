@@ -36,7 +36,7 @@ image:
   preview_only: false
 projects: []
 publication: '*Gazi University Journal of Science, Part A: Engineering and Innovation (GUJSA)*'
-publication_short: "Salpawuni"
+publication_short: ""
 publication_types:
   - "2"
 publishDate: "2024-09-30:00:00Z"
