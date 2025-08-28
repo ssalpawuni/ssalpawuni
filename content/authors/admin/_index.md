@@ -48,8 +48,8 @@ superuser: true
 title: Dr. Abubakari S. Sumaila
 ---
 
-Dr. Abubakari S. Sumaila earned his PhD in Statistics from Yildiz Technical 
-University, Istanbul, focusing on bioinformatics and melanoma research. His 
+Dr. Abubakari S. Sumaila earned his PhD in Statistics from [Yildiz Technical 
+University](https://www.yildiz.edu.tr/), Istanbul, focusing on bioinformatics and melanoma research. His 
 dissertation, titled "Survival Modeling in Cutaneous Melanoma via Integrative 
 Transcriptomic and Epigenetic Bioinformatics" was based on the application of 
 advanced statistical methods in multi-omics modeling for novel biomarker 
